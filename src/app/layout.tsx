@@ -1,10 +1,13 @@
+
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/ui/header";
-import { ThemeProvider } from "next-themes"; // ✅ add this
+import { ThemeProvider } from "next-themes";
 import { Providers } from "@/components/ui/providers";
 import { Footer } from "@/components/ui/footer";
+import { SessionProvider } from "@/lib/contexts/session-context"; // ✅ import
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,26 +26,27 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider
-          attribute="class" // ✅ tells next-themes to switch <html class="dark">
-          defaultTheme="system" // ✅ system, light, or dark
+          attribute="class"
+          defaultTheme="system"
           enableSystem
-          disableTransitionOnChange // ✅ prevents weird flicker
+          disableTransitionOnChange
         >
-          <Providers>
-            {/* header */}
-            <Header />
-            {children}
-            <Footer />
-          </Providers>
+          <SessionProvider>
+            <Providers>
+              <Header />
+              {children}
+              <Footer />
+            </Providers>
+          </SessionProvider>
         </ThemeProvider>
       </body>
     </html>
