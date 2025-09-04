@@ -510,7 +510,7 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Container className="pt-20 pb-8 space-y-6">
+      <Container className=" pb-8 space-y-6">
         {/* Header Section */}
         <div className="flex justify-between items-center">
           <motion.div
