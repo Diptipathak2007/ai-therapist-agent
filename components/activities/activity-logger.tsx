@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { Plus, X, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -22,7 +21,12 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
 import { useSession } from "@/lib/contexts/session-context";
-import { logActivity } from "@/lib/api/activity";
+
+// 🔹 temporary mock logActivity (remove when backend ready)
+async function logActivity(data: any) {
+  console.log("Mock logging activity:", data);
+  return new Promise((resolve) => setTimeout(resolve, 800)); // simulate delay
+}
 
 const activityTypes = [
   { id: "meditation", name: "Meditation" },
@@ -50,7 +54,7 @@ export function ActivityLogger({
   const [duration, setDuration] = useState("");
   const [description, setDescription] = useState("");
   const { toast } = useToast();
-  const { user, isAuthenticated, loading } = useSession();
+  const { isAuthenticated, loading } = useSession();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -115,34 +119,39 @@ export function ActivityLogger({
           <DialogDescription>Record your wellness activity</DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="space-y-2">
-            <Label>Activity Type</Label>
+          {/* Activity Type */}
+          <div className="flex flex-col space-y-2">
+            <Label htmlFor="type">Activity Type</Label>
             <Select value={type} onValueChange={setType}>
-              <SelectTrigger>
+              <SelectTrigger id="type">
                 <SelectValue placeholder="Select activity type" />
               </SelectTrigger>
               <SelectContent>
-                {activityTypes.map((type) => (
-                  <SelectItem key={type.id} value={type.id}>
-                    {type.name}
+                {activityTypes.map((t) => (
+                  <SelectItem key={t.id} value={t.id}>
+                    {t.name}
                   </SelectItem>
                 ))}
               </SelectContent>
             </Select>
           </div>
 
-          <div className="space-y-2">
-            <Label>Name</Label>
+          {/* Name */}
+          <div className="flex flex-col space-y-2">
+            <Label htmlFor="name">Name</Label>
             <Input
+              id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Morning Meditation, Evening Walk, etc."
             />
           </div>
 
-          <div className="space-y-2">
-            <Label>Duration (minutes)</Label>
+          {/* Duration */}
+          <div className="flex flex-col space-y-2">
+            <Label htmlFor="duration">Duration (minutes)</Label>
             <Input
+              id="duration"
               type="number"
               value={duration}
               onChange={(e) => setDuration(e.target.value)}
@@ -150,15 +159,18 @@ export function ActivityLogger({
             />
           </div>
 
-          <div className="space-y-2">
-            <Label>Description (optional)</Label>
+          {/* Description */}
+          <div className="flex flex-col space-y-2">
+            <Label htmlFor="description">Description (optional)</Label>
             <Input
+              id="description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="How did it go?"
             />
           </div>
 
+          {/* Actions */}
           <div className="flex justify-end gap-2">
             <Button
               type="button"
