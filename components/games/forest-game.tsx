@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { Progress } from "@/components/ui/progress";
 
+
 const MEDITATION_DURATION = 5 * 60; // 5 minutes in seconds
 
 export function ForestGame() {

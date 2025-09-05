@@ -1,13 +1,10 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Wind, Check } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
-
 const TOTAL_ROUNDS = 5;
-
 export function BreathingGame() {
   const [phase, setPhase] = useState<"inhale" | "hold" | "exhale">("inhale");
   const [progress, setProgress] = useState(0);
