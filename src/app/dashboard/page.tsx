@@ -61,7 +61,7 @@ import {
 
 import { ActivityLogger } from "@/components/activities/activity-logger";
 import { useSession } from "@/lib/contexts/session-context";
-import { getAllChatSessions } from "@/lib/api/chat";
+
 
 // Add this type definition
 type ActivityLevel = "none" | "low" | "medium" | "high";
@@ -372,12 +372,11 @@ export default function Dashboard() {
   const fetchDailyStats = useCallback(async () => {
     try {
       // Fetch therapy sessions using the chat API
-      const sessions = await getAllChatSessions();
+      
 
       // Fetch today's activities
-      const activitiesResponse = await fetch("/api/activities/today");
-      if (!activitiesResponse.ok) throw new Error("Failed to fetch activities");
-      const activities = await activitiesResponse.json();
+      
+     
 
       // Calculate mood score from activities
       const moodEntries = activities.filter(
@@ -396,7 +395,7 @@ export default function Dashboard() {
       setDailyStats({
         moodScore: averageMood,
         completionRate: 100,
-        mindfulnessCount: sessions.length, // Total number of therapy sessions
+        mindfulnessCount: activities.filter(a => a.type === "therapy").length, // Total number of therapy sessions
         totalActivities: activities.length,
         lastUpdated: new Date(),
       });
