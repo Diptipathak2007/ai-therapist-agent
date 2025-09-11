@@ -15,8 +15,8 @@ export default function Header() {
 
   return (
     <>
-      {/* Black header strip */}
-      <div className="w-full fixed top-0 z-50 bg-black">
+      {/* Navbar */}
+      <div className="w-full fixed top-0 z-50 bg-[var(--background)] shadow-sm">
         <header className="relative max-w-6xl mx-auto px-4">
           <div className="flex h-20 items-center justify-between">
             {/* logo */}
@@ -66,8 +66,9 @@ export default function Header() {
           </div>
         </header>
 
+        {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-primary/10 bg-black">
+          <div className="md:hidden border-t border-primary/10 bg-[var(--card)]">
             <nav className="flex flex-col space-y-1 py-4">
               {navitems.map((item) => (
                 <Link
