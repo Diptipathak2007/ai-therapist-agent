@@ -31,3 +31,43 @@
 {"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T16:04:23.341Z"}
 {"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T16:04:23.346Z"}
 {"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T16:04:23.352Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:04:20.596Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:04:20.607Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:04:20.608Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:04:41.795Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:04:41.798Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:04:41.798Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:04:49.136Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:04:49.140Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:04:49.140Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:07:33.635Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:07:33.643Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:07:33.643Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:08:16.617Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:08:16.619Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:08:16.620Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:08:43.786Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:08:43.789Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:08:43.790Z"}
+{"beforeHandshake":false,"cause":{"address":"159.41.196.84","code":"ETIMEDOUT","errno":-60,"port":27017,"syscall":"connect"},"connectionGeneration":0,"errorLabelSet":{},"level":"error","message":"❌ Error connecting to MongoDB: connect ETIMEDOUT 159.41.196.84:27017","stack":"MongoNetworkError: connect ETIMEDOUT 159.41.196.84:27017\n    at TLSSocket.<anonymous> (/Users/diptipathak/Desktop/ai-therapist-agent/backend/node_modules/mongodb/src/cmap/connect.ts:395:16)\n    at Object.onceWrapper (node:events:633:26)\n    at TLSSocket.emit (node:events:518:28)\n    at TLSSocket.emit (node:domain:489:12)\n    at emitErrorNT (node:internal/streams/destroy:170:8)\n    at emitErrorCloseNT (node:internal/streams/destroy:129:3)\n    at processTicksAndRejections (node:internal/process/task_queues:90:21)","timestamp":"2025-09-12T17:26:12.761Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:28:26.114Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:28:26.123Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:28:26.124Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:28:58.443Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:28:58.451Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:28:58.452Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:29:16.385Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:29:16.391Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:29:16.392Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:29:30.958Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:29:30.966Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:29:30.966Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:29:46.717Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:29:46.725Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:29:46.725Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:30:00.944Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:30:00.947Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:30:00.948Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:30:39.308Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:30:39.316Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:30:39.317Z"}
