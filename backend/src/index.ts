@@ -7,11 +7,11 @@ import { serve } from "inngest/express";
 import { errorHandler } from "./middleware/errorHandler";
 import { logger } from "./utils/logger";
 import authRouter from "./routes/auth";
-
-
-
+import chatRouter from "./routes/chat";
+import moodRouter from "./routes/mood";
+import activityRouter from "./routes/activity";
 import { connectDB } from "./utils/db";
-import inngest from "./inngest/index"; // Adjust the import if the client file is not present
+import inngest from "./inngest";
 import { functions as inngestFunctions } from "./inngest/functions";
 
 // Load environment variables
@@ -39,7 +39,9 @@ app.get("/health", (req, res) => {
 });
 
 app.use("/auth", authRouter);
-
+app.use("/chat", chatRouter);
+app.use("/api/mood", moodRouter);
+app.use("/api/activity", activityRouter);
 
 // Error handling middleware
 app.use(errorHandler);
