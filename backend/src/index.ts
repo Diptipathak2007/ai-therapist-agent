@@ -1,33 +1,59 @@
-import express, { Request, Response } from "express";
+import express from "express";
+import cors from "cors";
+import helmet from "helmet";
+import morgan from "morgan";
+import dotenv from "dotenv";
 import { serve } from "inngest/express";
-import  inngest  from "./inngest/index";              // ✅ named import
-import { functions as inngestFunctions } from "./inngest/functions"; // ✅ fixed path
+import { errorHandler } from "./middleware/errorHandler";
 import { logger } from "./utils/logger";
+import authRouter from "./routes/auth";
+
+
+
 import { connectDB } from "./utils/db";
+import inngest from "./inngest/index"; // Adjust the import if the client file is not present
+import { functions as inngestFunctions } from "./inngest/functions";
 
+// Load environment variables
+dotenv.config();
+
+// Create Express app
 const app = express();
-const PORT = process.env.PORT || 3001;
 
-app.use(express.json());
+// Middleware
+app.use(helmet()); // Security headers
+app.use(cors()); // Enable CORS
+app.use(express.json()); // Parse JSON bodies
+app.use(morgan("dev")); // HTTP request logger
 
-// Root route
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello from backend");
-});
-// ✅ Correct Inngest serve usage
+// Set up Inngest endpoint
 app.use(
   "/api/inngest",
-  serve({
-    client: inngest,
-    functions: inngestFunctions,
-  })
+  serve({ client: inngest, functions: inngestFunctions })
 );
+// OnaF6EGHhgYY9OPv
 
+// Routes
+app.get("/health", (req, res) => {
+  res.json({ status: "ok", message: "Server is running" });
+});
+
+app.use("/auth", authRouter);
+
+
+// Error handling middleware
+app.use(errorHandler);
+
+// Start server
 const startServer = async () => {
   try {
-    await connectDB(); // Ensure DB connection before starting server
+    // Connect to MongoDB first
+    await connectDB();
+
+    // Then start the server
+    const PORT = process.env.PORT || 3001;
     app.listen(PORT, () => {
-      logger.info(`Server is running on http://localhost:${PORT}`);
+      logger.info(`Server is running on port ${PORT}`);
       logger.info(
         `Inngest endpoint available at http://localhost:${PORT}/api/inngest`
       );
