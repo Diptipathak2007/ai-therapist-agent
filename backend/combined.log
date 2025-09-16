@@ -1,0 +1,449 @@
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-12T15:15:09.182Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T15:15:09.183Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-12T15:16:52.848Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T15:16:52.850Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-12T15:17:40.164Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T15:17:40.166Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-12T15:17:41.718Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T15:17:41.720Z"}
+{"level":"info","message":"Server is running on port 3000","timestamp":"2025-09-12T15:23:26.064Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3000/api/inngest","timestamp":"2025-09-12T15:23:26.066Z"}
+{"level":"info","message":"Server is running on port 3000","timestamp":"2025-09-12T15:23:53.759Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3000/api/inngest","timestamp":"2025-09-12T15:23:53.761Z"}
+{"level":"info","message":"Server is running on port 3000","timestamp":"2025-09-12T15:25:49.109Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3000/api/inngest","timestamp":"2025-09-12T15:25:49.110Z"}
+{"level":"info","message":"Server is running on port 3000","timestamp":"2025-09-12T15:27:18.611Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3000/api/inngest","timestamp":"2025-09-12T15:27:18.613Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T15:38:57.305Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T15:38:57.307Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T15:54:14.409Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T15:54:14.415Z"}
+{"cause":{"commonWireVersion":0,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"logicalSessionTimeoutMinutes":null,"maxElectionId":null,"maxSetVersion":null,"servers":{"localhost:27017":{"$clusterTime":null,"address":"localhost:27017","arbiters":[],"electionId":null,"error":{"beforeHandshake":false,"errorLabelSet":{}},"hosts":[],"iscryptd":false,"lastUpdateTime":8014788,"lastWriteDate":0,"logicalSessionTimeoutMinutes":null,"maxBsonObjectSize":null,"maxMessageSizeBytes":null,"maxWireVersion":0,"maxWriteBatchSize":null,"me":null,"minRoundTripTime":0,"minWireVersion":0,"passives":[],"primary":null,"roundTripTime":-1,"setName":null,"setVersion":null,"tags":{},"topologyVersion":null,"type":"Unknown"}},"setName":null,"stale":false,"type":"Unknown"},"errorLabelSet":{},"level":"error","message":"Error connecting to MongoDB: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017","reason":{"commonWireVersion":0,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"logicalSessionTimeoutMinutes":null,"maxElectionId":null,"maxSetVersion":null,"servers":{"localhost:27017":{"$clusterTime":null,"address":"localhost:27017","arbiters":[],"electionId":null,"error":{"beforeHandshake":false,"errorLabelSet":{}},"hosts":[],"iscryptd":false,"lastUpdateTime":8014788,"lastWriteDate":0,"logicalSessionTimeoutMinutes":null,"maxBsonObjectSize":null,"maxMessageSizeBytes":null,"maxWireVersion":0,"maxWriteBatchSize":null,"me":null,"minRoundTripTime":0,"minWireVersion":0,"passives":[],"primary":null,"roundTripTime":-1,"setName":null,"setVersion":null,"tags":{},"topologyVersion":null,"type":"Unknown"}},"setName":null,"stale":false,"type":"Unknown"},"stack":"MongooseServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017\n    at _handleConnectionErrors (/Users/diptipathak/Desktop/ai-therapist-agent/backend/node_modules/mongoose/lib/connection.js:1165:11)\n    at NativeConnection.openUri (/Users/diptipathak/Desktop/ai-therapist-agent/backend/node_modules/mongoose/lib/connection.js:1096:11)\n    at async connectDB (/Users/diptipathak/Desktop/ai-therapist-agent/backend/src/utils/db.ts:8:5)\n    at async startServer (/Users/diptipathak/Desktop/ai-therapist-agent/backend/src/index.ts:28:5)","timestamp":"2025-09-12T15:58:33.664Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T16:00:16.372Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T16:00:16.379Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T16:00:16.380Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T16:00:33.538Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T16:00:33.545Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T16:00:33.545Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T16:03:55.050Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T16:03:55.059Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T16:03:55.060Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T16:04:23.341Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T16:04:23.346Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T16:04:23.352Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:04:20.596Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:04:20.607Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:04:20.608Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:04:41.795Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:04:41.798Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:04:41.798Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:04:49.136Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:04:49.140Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:04:49.140Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:07:33.635Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:07:33.643Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:07:33.643Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:08:16.617Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:08:16.619Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:08:16.620Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:08:43.786Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:08:43.789Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:08:43.790Z"}
+{"beforeHandshake":false,"cause":{"address":"159.41.196.84","code":"ETIMEDOUT","errno":-60,"port":27017,"syscall":"connect"},"connectionGeneration":0,"errorLabelSet":{},"level":"error","message":"❌ Error connecting to MongoDB: connect ETIMEDOUT 159.41.196.84:27017","stack":"MongoNetworkError: connect ETIMEDOUT 159.41.196.84:27017\n    at TLSSocket.<anonymous> (/Users/diptipathak/Desktop/ai-therapist-agent/backend/node_modules/mongodb/src/cmap/connect.ts:395:16)\n    at Object.onceWrapper (node:events:633:26)\n    at TLSSocket.emit (node:events:518:28)\n    at TLSSocket.emit (node:domain:489:12)\n    at emitErrorNT (node:internal/streams/destroy:170:8)\n    at emitErrorCloseNT (node:internal/streams/destroy:129:3)\n    at processTicksAndRejections (node:internal/process/task_queues:90:21)","timestamp":"2025-09-12T17:26:12.761Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:28:26.114Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:28:26.123Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:28:26.124Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:28:58.443Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:28:58.451Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:28:58.452Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:29:16.385Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:29:16.391Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:29:16.392Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:29:30.958Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:29:30.966Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:29:30.966Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:29:46.717Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:29:46.725Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:29:46.725Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:30:00.944Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:30:00.947Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:30:00.948Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-12T17:30:39.308Z"}
+{"level":"info","message":"Server is running on http://localhost:3001","timestamp":"2025-09-12T17:30:39.316Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-12T17:30:39.317Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-13T14:36:10.627Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-13T14:36:10.635Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-13T14:36:10.636Z"}
+{"level":"info","message":"Activity logged for user 68c5830de4dd16c46f021472","timestamp":"2025-09-13T14:51:20.784Z"}
+{"level":"error","message":"Failed to send activity completion event: Inngest API Error: 401 Event key not found","stack":"Error: Inngest API Error: 401 Event key not found\n    at Inngest.getResponseError (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/components/Inngest.ts:386:12)\n    at body.maxAttempts.maxAttempts (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/components/Inngest.ts:688:28)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async retryWithBackoff (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/helpers/promises.ts:247:14)\n    at async Inngest._send (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/components/Inngest.ts:667:18)\n    at async sendActivityCompletionEvent (/Users/diptipathak/Desktop/ai-therapist-agent/backend/src/utils/inngestEvents.ts:50:5)\n    at async logActivity (/Users/diptipathak/Desktop/ai-therapist-agent/backend/src/controllers/activityController.ts:36:5)","timestamp":"2025-09-13T14:51:25.955Z"}
+{"level":"error","message":"Unexpected error: Inngest API Error: 401 Event key not found","stack":"Error: Inngest API Error: 401 Event key not found\n    at Inngest.getResponseError (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/components/Inngest.ts:386:12)\n    at body.maxAttempts.maxAttempts (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/components/Inngest.ts:688:28)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async retryWithBackoff (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/helpers/promises.ts:247:14)\n    at async Inngest._send (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/components/Inngest.ts:667:18)\n    at async sendActivityCompletionEvent (/Users/diptipathak/Desktop/ai-therapist-agent/backend/src/utils/inngestEvents.ts:50:5)\n    at async logActivity (/Users/diptipathak/Desktop/ai-therapist-agent/backend/src/controllers/activityController.ts:36:5)","timestamp":"2025-09-13T14:51:25.957Z"}
+{"level":"info","message":"Activity logged for user 68c5830de4dd16c46f021472","timestamp":"2025-09-13T14:51:33.680Z"}
+{"level":"error","message":"Failed to send activity completion event: Inngest API Error: 401 Event key not found","stack":"Error: Inngest API Error: 401 Event key not found\n    at Inngest.getResponseError (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/components/Inngest.ts:386:12)\n    at body.maxAttempts.maxAttempts (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/components/Inngest.ts:688:28)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async retryWithBackoff (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/helpers/promises.ts:247:14)\n    at async Inngest._send (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/components/Inngest.ts:667:18)\n    at async sendActivityCompletionEvent (/Users/diptipathak/Desktop/ai-therapist-agent/backend/src/utils/inngestEvents.ts:50:5)\n    at async logActivity (/Users/diptipathak/Desktop/ai-therapist-agent/backend/src/controllers/activityController.ts:36:5)","timestamp":"2025-09-13T14:51:38.735Z"}
+{"level":"error","message":"Unexpected error: Inngest API Error: 401 Event key not found","stack":"Error: Inngest API Error: 401 Event key not found\n    at Inngest.getResponseError (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/components/Inngest.ts:386:12)\n    at body.maxAttempts.maxAttempts (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/components/Inngest.ts:688:28)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async retryWithBackoff (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/helpers/promises.ts:247:14)\n    at async Inngest._send (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/components/Inngest.ts:667:18)\n    at async sendActivityCompletionEvent (/Users/diptipathak/Desktop/ai-therapist-agent/backend/src/utils/inngestEvents.ts:50:5)\n    at async logActivity (/Users/diptipathak/Desktop/ai-therapist-agent/backend/src/controllers/activityController.ts:36:5)","timestamp":"2025-09-13T14:51:38.737Z"}
+{"level":"info","message":"Activity logged for user 68c5830de4dd16c46f021472","timestamp":"2025-09-13T14:54:40.291Z"}
+{"level":"error","message":"Failed to send activity completion event: Inngest API Error: 401 Event key not found","stack":"Error: Inngest API Error: 401 Event key not found\n    at Inngest.getResponseError (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/components/Inngest.ts:386:12)\n    at body.maxAttempts.maxAttempts (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/components/Inngest.ts:688:28)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async retryWithBackoff (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/helpers/promises.ts:247:14)\n    at async Inngest._send (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/components/Inngest.ts:667:18)\n    at async sendActivityCompletionEvent (/Users/diptipathak/Desktop/ai-therapist-agent/backend/src/utils/inngestEvents.ts:50:5)\n    at async logActivity (/Users/diptipathak/Desktop/ai-therapist-agent/backend/src/controllers/activityController.ts:36:5)","timestamp":"2025-09-13T14:54:45.317Z"}
+{"level":"error","message":"Unexpected error: Inngest API Error: 401 Event key not found","stack":"Error: Inngest API Error: 401 Event key not found\n    at Inngest.getResponseError (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/components/Inngest.ts:386:12)\n    at body.maxAttempts.maxAttempts (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/components/Inngest.ts:688:28)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async retryWithBackoff (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/helpers/promises.ts:247:14)\n    at async Inngest._send (/Users/diptipathak/Desktop/ai-therapist-agent/node_modules/src/components/Inngest.ts:667:18)\n    at async sendActivityCompletionEvent (/Users/diptipathak/Desktop/ai-therapist-agent/backend/src/utils/inngestEvents.ts:50:5)\n    at async logActivity (/Users/diptipathak/Desktop/ai-therapist-agent/backend/src/controllers/activityController.ts:36:5)","timestamp":"2025-09-13T14:54:45.319Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-13T14:57:14.064Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-13T14:57:14.071Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-13T14:57:14.072Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-13T14:57:52.616Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-13T14:57:52.623Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-13T14:57:52.624Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-13T14:59:13.781Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-13T14:59:13.788Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-13T14:59:13.789Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-13T15:08:20.438Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-13T15:08:20.446Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-13T15:08:20.447Z"}
+{"level":"info","message":"Activity logged for user 68c5830de4dd16c46f021472","timestamp":"2025-09-13T15:08:23.747Z"}
+{"level":"info","message":"Activity completion event sent successfully","timestamp":"2025-09-13T15:08:23.791Z"}
+{"level":"info","message":"Mood entry created for user 68c5830de4dd16c46f021472","timestamp":"2025-09-13T15:11:25.208Z"}
+{"level":"info","message":"Mood update event sent successfully","timestamp":"2025-09-13T15:11:25.215Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T05:21:46.595Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T05:21:46.603Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T05:21:46.604Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T05:42:09.526Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T05:42:09.539Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T05:42:09.540Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T05:43:12.801Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T05:43:12.809Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T05:43:12.810Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T05:50:58.717Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T05:50:58.729Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T05:50:58.730Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T05:52:54.727Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T05:52:54.731Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T05:52:54.731Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T05:54:19.410Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T05:54:19.415Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T05:54:19.416Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T05:55:50.416Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T05:55:50.424Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T05:55:50.425Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:01:02.635Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:01:02.647Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:01:02.648Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:01:53.371Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:01:53.377Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:01:53.378Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:02:08.404Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:02:08.411Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:02:08.412Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:02:28.280Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:02:28.287Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:02:28.288Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:04:39.603Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:04:39.619Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:04:39.619Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:04:49.699Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:04:49.708Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:04:49.709Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:07:31.585Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:07:31.591Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:07:31.592Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:10:02.347Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:10:02.355Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:10:02.356Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:11:55.672Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:11:55.680Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:11:55.681Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:12:37.786Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:12:37.792Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:12:37.792Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:13:45.988Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:13:45.995Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:13:45.996Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:16:46.248Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:16:46.262Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:16:46.263Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:19:21.206Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:19:21.213Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:19:21.214Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:20:16.482Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:20:16.489Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:20:16.490Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:22:57.281Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:22:57.293Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:22:57.294Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:24:32.683Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:24:32.690Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:24:32.691Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:25:44.820Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:25:44.827Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:25:44.828Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:27:23.549Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:27:23.557Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:27:23.557Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:28:49.421Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:28:49.429Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:28:49.430Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:29:16.008Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:29:16.016Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:29:16.017Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:32:44.436Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:32:44.448Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:32:44.449Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:36:53.732Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:36:53.739Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:36:53.739Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:38:46.003Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:38:46.010Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:38:46.011Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:39:43.388Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:39:43.396Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:39:43.397Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:42:43.911Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:42:43.919Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:42:43.920Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:42:58.303Z"}
+{"level":"info","message":"Server is running on port 3001","timestamp":"2025-09-14T06:42:58.310Z"}
+{"level":"info","message":"Inngest endpoint available at http://localhost:3001/api/inngest","timestamp":"2025-09-14T06:42:58.311Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:43:58.310Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T06:43:58.317Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T06:43:58.317Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:48:33.066Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T06:48:33.083Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T06:48:33.084Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:55:52.700Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T06:55:52.713Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T06:55:52.714Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:58:36.628Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T06:58:36.634Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T06:58:36.635Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T06:58:59.440Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T06:58:59.447Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T06:58:59.448Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T07:00:11.664Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T07:00:11.670Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T07:00:11.670Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T07:04:05.278Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T07:04:05.283Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T07:04:05.284Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T07:30:30.983Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T07:30:30.993Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T07:30:30.993Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T07:33:23.309Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T07:33:23.318Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T07:33:23.318Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T07:35:17.550Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T07:35:17.563Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T07:35:17.564Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T07:35:49.889Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T07:35:49.904Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T07:35:49.905Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T07:41:48.318Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T07:41:48.330Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T07:41:48.330Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T07:43:26.238Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T07:43:26.249Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T07:43:26.249Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T07:46:02.992Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T07:46:03.005Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T07:46:03.005Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T08:16:14.690Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T08:16:14.703Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T08:16:14.703Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T08:16:30.215Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T08:16:30.221Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T08:16:30.221Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T08:16:42.300Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T08:16:42.308Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T08:16:42.309Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T08:20:14.004Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T08:20:14.014Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T08:20:14.015Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T08:21:09.730Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T08:21:09.738Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T08:21:09.738Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T08:33:22.466Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T08:33:22.478Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T08:33:22.479Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T08:35:17.375Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T08:35:17.390Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T08:35:17.390Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T08:47:05.915Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T08:47:05.922Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T08:47:05.923Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T09:29:50.201Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T09:29:50.213Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T09:29:50.213Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T09:57:43.775Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T09:57:43.787Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T09:57:43.788Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T09:57:47.677Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T09:57:47.684Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T09:57:47.685Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T09:58:47.714Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T09:58:47.722Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T09:58:47.723Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T10:17:47.595Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T10:17:47.605Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T10:17:47.606Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T10:19:51.390Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T10:19:51.401Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T10:19:51.402Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T10:21:14.320Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T10:21:14.327Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T10:21:14.328Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T10:26:12.407Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T10:26:12.415Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T10:26:12.416Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T10:35:46.755Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T10:35:46.762Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T10:35:46.763Z"}
+{"code":"EREFUSED","hostname":"_mongodb._tcp.therapy.vmw9qs6.mongodb.net","level":"error","message":"❌ Error connecting to MongoDB: querySrv EREFUSED _mongodb._tcp.therapy.vmw9qs6.mongodb.net","stack":"Error: querySrv EREFUSED _mongodb._tcp.therapy.vmw9qs6.mongodb.net\n    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:293:17)","syscall":"querySrv","timestamp":"2025-09-14T13:56:42.413Z"}
+{"code":"EREFUSED","hostname":"_mongodb._tcp.therapy.vmw9qs6.mongodb.net","level":"error","message":"❌ Error connecting to MongoDB: querySrv EREFUSED _mongodb._tcp.therapy.vmw9qs6.mongodb.net","stack":"Error: querySrv EREFUSED _mongodb._tcp.therapy.vmw9qs6.mongodb.net\n    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:293:17)","syscall":"querySrv","timestamp":"2025-09-14T13:59:04.675Z"}
+{"code":"EREFUSED","hostname":"_mongodb._tcp.therapy.vmw9qs6.mongodb.net","level":"error","message":"❌ Error connecting to MongoDB: querySrv EREFUSED _mongodb._tcp.therapy.vmw9qs6.mongodb.net","stack":"Error: querySrv EREFUSED _mongodb._tcp.therapy.vmw9qs6.mongodb.net\n    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:293:17)","syscall":"querySrv","timestamp":"2025-09-14T14:00:42.523Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-14T15:39:39.132Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-14T15:39:39.139Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-14T15:39:39.140Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T05:43:24.064Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T05:43:24.070Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T05:43:24.071Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T05:57:53.129Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T05:57:53.142Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T05:57:53.143Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T05:58:01.203Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T05:58:01.211Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T05:58:01.211Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T05:58:59.257Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T05:58:59.264Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T05:58:59.265Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T05:59:10.955Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T05:59:10.963Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T05:59:10.963Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T05:59:31.576Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T05:59:31.583Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T05:59:31.584Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T06:00:13.364Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T06:00:13.369Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T06:00:13.369Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T06:02:11.611Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T06:02:11.633Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T06:02:11.634Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T06:02:20.008Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T06:02:20.013Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T06:02:20.014Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T06:02:24.133Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T06:02:24.139Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T06:02:24.140Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T06:02:37.903Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T06:02:37.910Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T06:02:37.910Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T06:06:34.515Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T06:06:34.519Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T06:06:34.519Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T06:07:03.010Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T06:07:03.015Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T06:07:03.016Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T06:07:48.693Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T06:07:48.702Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T06:07:48.703Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T06:09:05.917Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T06:09:05.926Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T06:09:05.927Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T06:12:19.538Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T06:12:19.547Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T06:12:19.547Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T06:12:51.557Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T06:12:51.564Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T06:12:51.565Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T06:19:11.657Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T06:19:11.666Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T06:19:11.667Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T06:19:27.225Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T06:19:27.232Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T06:19:27.233Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T06:28:43.292Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T06:28:43.297Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T06:28:43.297Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T06:58:53.279Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T06:58:53.292Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T06:58:53.293Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T06:59:14.732Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T06:59:14.737Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T06:59:14.738Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T06:59:31.283Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T06:59:31.287Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T06:59:31.287Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T06:59:39.730Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T06:59:39.735Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T06:59:39.736Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T06:59:42.987Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T06:59:42.995Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T06:59:42.995Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T07:00:28.725Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T07:00:28.730Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T07:00:28.731Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T07:01:30.117Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T07:01:30.124Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T07:01:30.125Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T11:34:36.108Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T11:34:36.114Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T11:34:36.115Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T11:43:13.683Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T11:43:13.697Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T11:43:13.698Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T11:44:39.383Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T11:44:39.388Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T11:44:39.389Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T11:51:43.573Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T11:51:43.589Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T11:51:43.590Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T11:54:08.508Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T11:54:08.520Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T11:54:08.521Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T11:57:57.051Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T11:57:57.062Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T11:57:57.062Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T12:00:23.187Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T12:00:23.198Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T12:00:23.199Z"}
+{"level":"info","message":"Processing message: hwo","sessionId":"0c0f09c7-8047-487d-9fb9-73a84435eecf","timestamp":"2025-09-15T12:00:42.779Z"}
+{"event":{"data":{"goals":[],"history":[{"_id":"68c7fe48165a5650627e3840","content":"How","role":"user","timestamp":"2025-09-15T11:53:44.991Z"},{"_id":"68c7fe48165a5650627e3841","content":"Assistant reply to: How","role":"assistant","timestamp":"2025-09-15T11:53:44.992Z"},{"_id":"68c7ff4a6b9f42701d4ee02d","content":"hwo to mange","role":"user","timestamp":"2025-09-15T11:58:02.891Z"},{"_id":"68c7ff4a6b9f42701d4ee02e","content":"Assistant reply to: hwo to mange","role":"assistant","timestamp":"2025-09-15T11:58:02.893Z"}],"memory":{"sessionContext":{"conversationThemes":[],"currentTechnique":null},"userProfile":{"emotionalState":[],"preferences":{},"riskLevel":0}},"message":"hwo","systemPrompt":"You are an AI therapist assistant. Your role is to:\n          1. Provide empathetic and supportive responses\n          2. Use evidence-based therapeutic techniques\n          3. Maintain professional boundaries\n          4. Monitor for risk factors\n          5. Guide users toward their therapeutic goals\n          6. Be supportive but not replace professional therapy"},"name":"therapy/session.message"},"level":"info","message":"Sending message to Inngest:","timestamp":"2025-09-15T12:00:42.818Z"}
+{"emotionalState":"uncertain","level":"info","message":"Message analysis:","progressIndicators":[],"recommendedApproach":"clarification","riskLevel":1,"themes":["questioning","management"],"timestamp":"2025-09-15T12:00:47.353Z"}
+{"level":"info","message":"Generated AI response successfully","timestamp":"2025-09-15T12:00:49.542Z"}
+{"level":"info","message":"Session updated successfully:","sessionId":"0c0f09c7-8047-487d-9fb9-73a84435eecf","timestamp":"2025-09-15T12:00:49.606Z"}
+{"level":"info","message":"Processing message: how","sessionId":"9975e208-aa62-4a36-94f3-1dc8aa45a4ef","timestamp":"2025-09-15T12:01:39.987Z"}
+{"event":{"data":{"goals":[],"history":[],"memory":{"sessionContext":{"conversationThemes":[],"currentTechnique":null},"userProfile":{"emotionalState":[],"preferences":{},"riskLevel":0}},"message":"how","systemPrompt":"You are an AI therapist assistant. Your role is to:\n          1. Provide empathetic and supportive responses\n          2. Use evidence-based therapeutic techniques\n          3. Maintain professional boundaries\n          4. Monitor for risk factors\n          5. Guide users toward their therapeutic goals\n          6. Be supportive but not replace professional therapy"},"name":"therapy/session.message"},"level":"info","message":"Sending message to Inngest:","timestamp":"2025-09-15T12:01:40.029Z"}
+{"emotionalState":"uncertain","level":"info","message":"Message analysis:","progressIndicators":[],"recommendedApproach":"exploration","riskLevel":1,"themes":[],"timestamp":"2025-09-15T12:01:43.960Z"}
+{"level":"info","message":"Generated AI response successfully","timestamp":"2025-09-15T12:01:47.819Z"}
+{"level":"info","message":"Session updated successfully:","sessionId":"9975e208-aa62-4a36-94f3-1dc8aa45a4ef","timestamp":"2025-09-15T12:01:47.865Z"}
+{"level":"info","message":"Processing message: why","sessionId":"9975e208-aa62-4a36-94f3-1dc8aa45a4ef","timestamp":"2025-09-15T12:03:15.048Z"}
+{"event":{"data":{"goals":[],"history":[{"_id":"68c8002bae11cbaefa8e0b51","content":"how","role":"user","timestamp":"2025-09-15T12:01:47.820Z"},{"_id":"68c8002bae11cbaefa8e0b52","content":"It sounds like you're feeling uncertain right now. Sometimes, that feeling of \"how\" can be overwhelming. It might mean you're unsure where to start, how to proceed, or even how you're feeling specifically. That's perfectly okay.\n\nOften, when we feel uncertain, it helps to break things down. Perhaps we can explore what that \"how\" relates to. Is it \"How do I feel?\", \"How do I manage this situation?\", or something else entirely?\n\nThink of it like this: imagine you're facing a tangled ball of yarn. Instead of trying to pull it all at once, you'd gently try to find a loose end to begin unraveling.\n\nWould you be comfortable sharing a little more about what you're thinking about when you say \"how\"? There's no pressure to share anything you're not ready to, but even a small clue could help us start to understand what's going on.\n\nIn the meantime, remember to breathe deeply and be kind to yourself. Uncertainty can be challenging, and acknowledging that is a sign of strength. Maybe try focusing on something that usually brings you comfort or calm. This could be listening to your favorite music, going for a short walk, or spending time with a pet. Small acts of self-care can make a big difference.\n\nAnd just to reiterate, I'm here to support you, but I'm not a substitute for a qualified mental health professional. If you feel overwhelmed or unsafe, please reach out to a trusted friend, family member, or a crisis hotline. I'm here to listen and help you explore, and we'll take things at your pace.","metadata":{"analysis":{"emotionalState":"uncertain","progressIndicators":[],"recommendedApproach":"exploration","riskLevel":1,"themes":[]},"progress":{"emotionalState":"uncertain","riskLevel":1}},"role":"assistant","timestamp":"2025-09-15T12:01:47.821Z"}],"memory":{"sessionContext":{"conversationThemes":[],"currentTechnique":null},"userProfile":{"emotionalState":[],"preferences":{},"riskLevel":0}},"message":"why","systemPrompt":"You are an AI therapist assistant. Your role is to:\n          1. Provide empathetic and supportive responses\n          2. Use evidence-based therapeutic techniques\n          3. Maintain professional boundaries\n          4. Monitor for risk factors\n          5. Guide users toward their therapeutic goals\n          6. Be supportive but not replace professional therapy"},"name":"therapy/session.message"},"level":"info","message":"Sending message to Inngest:","timestamp":"2025-09-15T12:03:15.081Z"}
+{"emotionalState":"curious","level":"info","message":"Message analysis:","progressIndicators":["seeking deeper understanding"],"recommendedApproach":"exploration","riskLevel":1,"themes":["causality","understanding","motivation"],"timestamp":"2025-09-15T12:03:19.256Z"}
+{"level":"info","message":"Generated AI response successfully","timestamp":"2025-09-15T12:03:22.532Z"}
+{"level":"info","message":"Session updated successfully:","sessionId":"9975e208-aa62-4a36-94f3-1dc8aa45a4ef","timestamp":"2025-09-15T12:03:22.585Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T12:05:55.720Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T12:05:55.733Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T12:05:55.734Z"}
+{"level":"info","message":"Processing message: how","sessionId":"9975e208-aa62-4a36-94f3-1dc8aa45a4ef","timestamp":"2025-09-15T12:06:12.406Z"}
+{"emotionalState":"confused","level":"info","message":"Message analysis:","progressIndicators":[],"recommendedApproach":"exploration","riskLevel":1,"suggestedStrategies":[],"themes":[],"timestamp":"2025-09-15T12:06:16.636Z"}
+{"level":"info","message":"Generated AI response successfully","timestamp":"2025-09-15T12:06:18.974Z"}
+{"level":"info","message":"Session updated:","messages":6,"sessionId":"9975e208-aa62-4a36-94f3-1dc8aa45a4ef","timestamp":"2025-09-15T12:06:19.019Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T12:06:36.050Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T12:06:36.055Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T12:06:36.055Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-15T12:30:36.659Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-15T12:30:36.669Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-15T12:30:36.670Z"}
+{"level":"info","message":"Processing message: how","sessionId":"9975e208-aa62-4a36-94f3-1dc8aa45a4ef","timestamp":"2025-09-15T12:30:44.010Z"}
+{"event":{"data":{"goals":[],"history":[{"_id":"68c8002bae11cbaefa8e0b51","content":"how","role":"user","timestamp":"2025-09-15T12:01:47.820Z"},{"_id":"68c8002bae11cbaefa8e0b52","content":"It sounds like you're feeling uncertain right now. Sometimes, that feeling of \"how\" can be overwhelming. It might mean you're unsure where to start, how to proceed, or even how you're feeling specifically. That's perfectly okay.\n\nOften, when we feel uncertain, it helps to break things down. Perhaps we can explore what that \"how\" relates to. Is it \"How do I feel?\", \"How do I manage this situation?\", or something else entirely?\n\nThink of it like this: imagine you're facing a tangled ball of yarn. Instead of trying to pull it all at once, you'd gently try to find a loose end to begin unraveling.\n\nWould you be comfortable sharing a little more about what you're thinking about when you say \"how\"? There's no pressure to share anything you're not ready to, but even a small clue could help us start to understand what's going on.\n\nIn the meantime, remember to breathe deeply and be kind to yourself. Uncertainty can be challenging, and acknowledging that is a sign of strength. Maybe try focusing on something that usually brings you comfort or calm. This could be listening to your favorite music, going for a short walk, or spending time with a pet. Small acts of self-care can make a big difference.\n\nAnd just to reiterate, I'm here to support you, but I'm not a substitute for a qualified mental health professional. If you feel overwhelmed or unsafe, please reach out to a trusted friend, family member, or a crisis hotline. I'm here to listen and help you explore, and we'll take things at your pace.","metadata":{"analysis":{"emotionalState":"uncertain","progressIndicators":[],"recommendedApproach":"exploration","riskLevel":1,"themes":[]},"progress":{"emotionalState":"uncertain","riskLevel":1}},"role":"assistant","timestamp":"2025-09-15T12:01:47.821Z"},{"_id":"68c8008aae11cbaefa8e0b6d","content":"why","role":"user","timestamp":"2025-09-15T12:03:22.533Z"},{"_id":"68c8008aae11cbaefa8e0b6e","content":"It sounds like you're asking \"why,\" and that's a powerful question. It suggests you're seeking a deeper understanding, perhaps looking for reasons behind something you're experiencing. It's completely natural to want to know \"why\" things are the way they are, especially when we're facing challenges or trying to make sense of our feelings.\n\nGiven that you previously asked \"how,\" and we talked about uncertainty, could this \"why\" be connected to that feeling? Are you perhaps wondering *why* you're feeling uncertain, or *why* a particular situation is making you feel that way? Or is this \"why\" related to something entirely different?\n\nSometimes, exploring the \"why\" can be really helpful in understanding our motivations, reactions, and the bigger picture. But it can also be a difficult question to answer, as there isn't always a simple or satisfying reason.\n\nTo help us explore this further, perhaps you could tell me a little more about what you're thinking about when you ask \"why\"? What situation or feeling are you trying to understand?\n\nIn the meantime, remember it's okay if the answers aren't immediately clear. The process of asking \"why\" is often just as important as finding the answers. Be patient with yourself as you explore this. Maybe try journaling your thoughts and feelings related to this \"why\". Often, writing things down can help clarify our thinking.\n\nAnd as always, please remember that I am here to support you in exploring these feelings, but I am not a replacement for professional therapy. If you feel overwhelmed or if these questions are bringing up difficult emotions that you are struggling to manage, please consider reaching out to a qualified mental health professional or a crisis hotline. Your well-being is the top priority.","metadata":{"analysis":{"emotionalState":"curious","progressIndicators":["seeking deeper understanding"],"recommendedApproach":"exploration","riskLevel":1,"themes":["causality","understanding","motivation"]},"progress":{"emotionalState":"curious","riskLevel":1}},"role":"assistant","timestamp":"2025-09-15T12:03:22.533Z"},{"_id":"68c8013a1144b13d38d20ad9","content":"how","role":"user","timestamp":"2025-09-15T12:06:18.974Z"},{"_id":"68c8013a1144b13d38d20ada","content":"It sounds like you're still feeling confused. It's understandable to feel lost when you're trying to figure things out. Confusion can be frustrating, but it's also a sign that you're trying to understand something important.\n\nHere are a few things that might help when you're feeling confused:\n\n*   **Mindfulness Exercise**: Try focusing on your breath for a few minutes. Pay attention to the sensation of the air entering and leaving your body. This can help ground you in the present moment and clear your head.\n*   **Simplify the Problem**: Break down the issue into smaller, more manageable parts. Focus on understanding one piece at a time. Ask: What is the smallest part of this I *can* understand?\n\nRemember, it's okay not to have all the answers right away. Give yourself permission to take things one step at a time.\n\nWhat's one small thing you can do right now to bring a little clarity to your confusion?","metadata":{"analysis":{"emotionalState":"confused","progressIndicators":[],"recommendedApproach":"exploration","riskLevel":1,"suggestedStrategies":[],"themes":[]},"progress":{"emotionalState":"confused","riskLevel":1}},"role":"assistant","timestamp":"2025-09-15T12:06:18.976Z"}],"memory":{"sessionContext":{"conversationThemes":[],"currentTechnique":null},"userProfile":{"emotionalState":[],"preferences":{},"riskLevel":0}},"message":"how","systemPrompt":"You are an AI therapist assistant. Your role is to:\n          1. Provide empathetic and supportive responses\n          2. Use evidence-based therapeutic techniques\n          3. Maintain professional boundaries\n          4. Monitor for risk factors\n          5. Guide users toward their therapeutic goals\n          6. Be supportive but not replace professional therapy"},"name":"therapy/session.message"},"level":"info","message":"Sending message to Inngest:","timestamp":"2025-09-15T12:30:44.054Z"}
+{"emotionalState":"confused","level":"info","message":"Message analysis:","progressIndicators":[],"recommendedApproach":"exploration","riskLevel":1,"themes":[],"timestamp":"2025-09-15T12:30:48.368Z"}
+{"level":"info","message":"Generated AI response successfully","timestamp":"2025-09-15T12:30:51.515Z"}
+{"level":"info","message":"Session updated successfully:","sessionId":"9975e208-aa62-4a36-94f3-1dc8aa45a4ef","timestamp":"2025-09-15T12:30:51.577Z"}
+{"level":"info","message":"Processing message: Can we talk about improving sleep?","sessionId":"c31effe6-4fbe-4ac4-9dcb-702583cc6315","timestamp":"2025-09-15T12:32:21.883Z"}
+{"event":{"data":{"goals":[],"history":[],"memory":{"sessionContext":{"conversationThemes":[],"currentTechnique":null},"userProfile":{"emotionalState":[],"preferences":{},"riskLevel":0}},"message":"Can we talk about improving sleep?","systemPrompt":"You are an AI therapist assistant. Your role is to:\n          1. Provide empathetic and supportive responses\n          2. Use evidence-based therapeutic techniques\n          3. Maintain professional boundaries\n          4. Monitor for risk factors\n          5. Guide users toward their therapeutic goals\n          6. Be supportive but not replace professional therapy"},"name":"therapy/session.message"},"level":"info","message":"Sending message to Inngest:","timestamp":"2025-09-15T12:32:21.927Z"}
+{"emotionalState":"neutral","level":"info","message":"Message analysis:","progressIndicators":[],"recommendedApproach":"CBT-I","riskLevel":1,"themes":["sleep","health","well-being"],"timestamp":"2025-09-15T12:32:25.905Z"}
+{"level":"info","message":"Generated AI response successfully","timestamp":"2025-09-15T12:32:29.587Z"}
+{"level":"info","message":"Session updated successfully:","sessionId":"c31effe6-4fbe-4ac4-9dcb-702583cc6315","timestamp":"2025-09-15T12:32:29.631Z"}
+{"level":"info","message":"Processing message: i need help with work-life balanve","sessionId":"875d73eb-85bc-491d-b5be-9fc8fa7ed1a6","timestamp":"2025-09-15T12:34:20.533Z"}
+{"event":{"data":{"goals":[],"history":[],"memory":{"sessionContext":{"conversationThemes":[],"currentTechnique":null},"userProfile":{"emotionalState":[],"preferences":{},"riskLevel":0}},"message":"i need help with work-life balanve","systemPrompt":"You are an AI therapist assistant. Your role is to:\n          1. Provide empathetic and supportive responses\n          2. Use evidence-based therapeutic techniques\n          3. Maintain professional boundaries\n          4. Monitor for risk factors\n          5. Guide users toward their therapeutic goals\n          6. Be supportive but not replace professional therapy"},"name":"therapy/session.message"},"level":"info","message":"Sending message to Inngest:","timestamp":"2025-09-15T12:34:20.568Z"}
+{"emotionalState":"stressed","level":"info","message":"Message analysis:","progressIndicators":[],"recommendedApproach":"CBT, time management techniques, mindfulness","riskLevel":2,"themes":["work-life balance","stress","coping"],"timestamp":"2025-09-15T12:34:24.886Z"}
+{"level":"info","message":"Generated AI response successfully","timestamp":"2025-09-15T12:34:28.985Z"}
+{"level":"info","message":"Session updated successfully:","sessionId":"875d73eb-85bc-491d-b5be-9fc8fa7ed1a6","timestamp":"2025-09-15T12:34:29.056Z"}
+{"level":"info","message":"Processing message: Can we talk about improving sleep?","sessionId":"e85b7a6f-7bc4-4baa-a9cb-9f468f686644","timestamp":"2025-09-15T14:30:59.803Z"}
+{"event":{"data":{"goals":[],"history":[],"memory":{"sessionContext":{"conversationThemes":[],"currentTechnique":null},"userProfile":{"emotionalState":[],"preferences":{},"riskLevel":0}},"message":"Can we talk about improving sleep?","systemPrompt":"You are an AI therapist assistant. Your role is to:\n          1. Provide empathetic and supportive responses\n          2. Use evidence-based therapeutic techniques\n          3. Maintain professional boundaries\n          4. Monitor for risk factors\n          5. Guide users toward their therapeutic goals\n          6. Be supportive but not replace professional therapy"},"name":"therapy/session.message"},"level":"info","message":"Sending message to Inngest:","timestamp":"2025-09-15T14:30:59.833Z"}
+{"emotionalState":"neutral","level":"info","message":"Message analysis:","progressIndicators":[],"recommendedApproach":"CBT-I, sleep hygiene education","riskLevel":1,"themes":["sleep","health"],"timestamp":"2025-09-15T14:31:03.977Z"}
+{"level":"info","message":"Generated AI response successfully","timestamp":"2025-09-15T14:31:07.317Z"}
+{"level":"info","message":"Session updated successfully:","sessionId":"e85b7a6f-7bc4-4baa-a9cb-9f468f686644","timestamp":"2025-09-15T14:31:07.376Z"}
