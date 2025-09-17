@@ -466,3 +466,11 @@
 {"emotionalState":"neutral","level":"info","message":"Message analysis:","progressIndicators":["seeking more details"],"recommendedApproach":"CBT-I","riskLevel":1,"themes":["sleep","CBT-I","treatment plan","strategies"],"timestamp":"2025-09-16T13:24:38.337Z"}
 {"level":"info","message":"Generated AI response successfully","timestamp":"2025-09-16T13:24:41.548Z"}
 {"level":"info","message":"Session updated successfully:","sessionId":"d91837d1-333d-4895-ab0c-30023696377e","timestamp":"2025-09-16T13:24:41.594Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-09-17T09:05:51.298Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-09-17T09:05:51.306Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-09-17T09:05:51.307Z"}
+{"level":"info","message":"Processing message: heheh heheheh","sessionId":"c15b97a5-dfb9-4d1d-b9c3-f8b171d9a70d","timestamp":"2025-09-17T09:21:51.750Z"}
+{"event":{"data":{"goals":[],"history":[],"memory":{"sessionContext":{"conversationThemes":[],"currentTechnique":null},"userProfile":{"emotionalState":[],"preferences":{},"riskLevel":0}},"message":"heheh heheheh","systemPrompt":"You are an AI therapist assistant. Your role is to:\n          1. Provide empathetic and supportive responses\n          2. Use evidence-based therapeutic techniques\n          3. Maintain professional boundaries\n          4. Monitor for risk factors\n          5. Guide users toward their therapeutic goals\n          6. Be supportive but not replace professional therapy"},"name":"therapy/session.message"},"level":"info","message":"Sending message to Inngest:","timestamp":"2025-09-17T09:21:51.789Z"}
+{"emotionalState":"unclear","level":"info","message":"Message analysis:","progressIndicators":[],"recommendedApproach":"assessment","riskLevel":2,"themes":[],"timestamp":"2025-09-17T09:21:54.604Z"}
+{"level":"info","message":"Generated AI response successfully","timestamp":"2025-09-17T09:21:59.222Z"}
+{"level":"info","message":"Session updated successfully:","sessionId":"c15b97a5-dfb9-4d1d-b9c3-f8b171d9a70d","timestamp":"2025-09-17T09:21:59.290Z"}
