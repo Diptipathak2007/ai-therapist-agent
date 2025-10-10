@@ -41,19 +41,20 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --animate-ripple: ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite;
+  --animate-ripple: ripple var(--duration, 2s) ease calc(var(--i, 0)*.2s) infinite;
+
   @keyframes ripple {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
     }
-  50% {
-    transform: translate(-50%, -50%) scale(0.9);
+    50% {
+      transform: translate(-50%, -50%) scale(0.9);
     }
   }
 }
 
+/* 🌞 LIGHT MODE */
 :root {
-  /* LIGHT MODE */
   --background: #fdfaf6;
   --foreground: #1c1c1e;
   --card: #ffffff;
@@ -75,10 +76,9 @@
   --input: #ffffff;
   --ring: #ec4899;
   --radius: 0.75rem;
-
   --icon-color: #ec4899;
 
-  /* SIDEBAR LIGHT MODE */
+  /* ✅ SIDEBAR LIGHT MODE FIX */
   --sidebar: #ffffff;
   --sidebar-foreground: #1c1c1e;
   --sidebar-primary: #ec4899;
@@ -89,8 +89,8 @@
   --sidebar-ring: #ec4899;
 }
 
+/* 🌙 DARK MODE */
 .dark {
-  /* DARK MODE */
   --background: #0f0f0f;
   --foreground: #fdfaf6;
   --card: #1a1a1a;
@@ -111,10 +111,9 @@
   --border: #333333;
   --input: #1a1a1a;
   --ring: #ec4899;
-
   --icon-color: #ec4899;
 
-  /* SIDEBAR DARK MODE */
+  /* ✅ SIDEBAR DARK MODE FIX */
   --sidebar: #1a1a1a;
   --sidebar-foreground: #fdfaf6;
   --sidebar-primary: #ec4899;
@@ -125,11 +124,18 @@
   --sidebar-ring: #ec4899;
 }
 
-/* Global application */
-body {
-  @apply bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300;
+/* 🌐 GLOBAL */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300;
+  }
 }
 
+/* 🩷 COMPONENTS */
 .card {
   @apply bg-[var(--card)] text-[var(--card-foreground)] rounded-2xl shadow-md p-4;
 }
@@ -145,6 +151,7 @@ body {
   font-weight: 500;
 }
 
+/* 🔘 BUTTONS */
 .btn-primary {
   @apply bg-[var(--primary)] text-[var(--primary-foreground)] rounded-xl px-4 py-2 font-medium shadow-sm hover:opacity-90 transition;
 }
@@ -153,18 +160,7 @@ body {
   @apply bg-[var(--secondary)] text-[var(--secondary-foreground)] rounded-xl px-4 py-2 font-medium shadow-sm hover:opacity-90 transition;
 }
 
-/* ICONS: Make all Lucide icons pink by default */
-.lucide {
-  stroke: var(--icon-color);
-  fill: transparent;
-  transition: stroke 0.3s;
-}
-
-.lucide-filled {
-  fill: var(--icon-color);
-}
-
-/* Sidebar specific styles */
+/* 🧭 SIDEBAR */
 .sidebar {
   background-color: var(--sidebar) !important;
   color: var(--sidebar-foreground) !important;
@@ -187,11 +183,20 @@ body {
   color: var(--sidebar-primary-foreground) !important;
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+/* 🎞️ ICONS + ANIMATIONS */
+.lucide {
+  stroke: var(--icon-color);
+  fill: transparent;
+  transition: stroke 0.3s;
+}
+
+.lucide-filled {
+  fill: var(--icon-color);
+}
+
+.toggle {
+  @apply cursor-pointer transition-transform duration-300;
+}
+.toggle:active {
+  transform: scale(0.95);
 }
