@@ -570,3 +570,9 @@
 {"emotionalState":"frustrated","level":"info","message":"Message analysis:","progressIndicators":[],"recommendedApproach":"CBT, exploration of underlying beliefs about academic success, focus on effort and process over outcome","riskLevel":3,"themes":["academic performance","self-esteem","achievement","anxiety"],"timestamp":"2025-10-10T13:03:05.572Z"}
 {"level":"info","message":"Generated AI response successfully","timestamp":"2025-10-10T13:03:09.900Z"}
 {"level":"info","message":"Session updated successfully:","sessionId":"496ee8bf-6c1d-47fb-8f1b-e7945a495502","timestamp":"2025-10-10T13:03:09.945Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-10-10T13:04:18.385Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-10-10T13:04:18.395Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-10-10T13:04:18.396Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-10-10T13:04:25.341Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-10-10T13:04:25.348Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-10-10T13:04:25.349Z"}
