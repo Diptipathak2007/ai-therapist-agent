@@ -1,36 +1,27 @@
 "use client";
 
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Slider } from "@/components/ui/slider";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { Ripple } from "@/components/ui/ripple";
+import React from "react";
+
 import {
   Brain,
-  Heart,
   Shield,
-  MessageCircle,
-  Sparkles,
-  LineChart,
-  Waves,
-  Check,
-  ArrowRight,
+  Orbit,
   HeartPulse,
   Lightbulb,
   Lock,
   MessageSquareHeart,
-  Orbit,
+  ArrowRight,
+  Sparkles,
 } from "lucide-react";
-import { motion } from "framer-motion";
-import { Slider } from "@/components/ui/slider";
-import { useState, useEffect } from "react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
-import React from "react";
-import { Ripple } from "@/components/ui/ripple";
+
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
 
 export default function Home() {
   const emotions = [
@@ -71,8 +62,7 @@ export default function Home() {
     setMounted(true);
   }, []);
 
-  const currentEmotion =
-    emotions.find((em) => Math.abs(emotion - em.value) < 15) || emotions[2];
+  const currentEmotion = emotions.find((em) => Math.abs(emotion - em.value) < 15) || emotions[2];
 
   const features = [
     {
@@ -219,14 +209,13 @@ export default function Home() {
                 Begin Your Journey
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-size-200 bg-pos-0 group-hover:bg-pos-100" />
             </Button>
           </motion.div>
         </motion.div>
       </section>
 
       {/* Features Section */}
-      <section className="relative py-20 px-4 overflow-hidden">
+      <section id="features" className="relative py-20 px-4 overflow-hidden">
         <div className="max-w-6xl mx-auto">
           <motion.div className="text-center mb-16 space-y-4 text-white ">
             <h2 className="text-3xl font-bold bg-gradient-to-r from-primary/90 to-primary bg-clip-text text-transparent dark:text-primary/90">
@@ -270,6 +259,18 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="relative py-20 px-4 overflow-hidden bg-background/50 dark:bg-background/80">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            About KORA
+          </h2>
+          <p className="text-foreground text-lg leading-relaxed">
+            Kora is your trusted AI companion dedicated to supporting your emotional wellbeing through personalized guidance, privacy-first interaction, and evidence-based techniques.
+          </p>
         </div>
       </section>
 

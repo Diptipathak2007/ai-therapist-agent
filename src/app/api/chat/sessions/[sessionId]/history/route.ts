@@ -1,8 +1,13 @@
+// FILE LOCATION: app/api/chat/sessions/[sessionId]/history/route.ts
+
 import { NextRequest, NextResponse } from "next/server";
 
-const BACKEND_API_URL =
-  process.env.BACKEND_API_URL ||
-  "http://localhost:3001";
+const chatSessions = new Map<string, Array<{
+  role: "user" | "assistant";
+  content: string;
+  timestamp: Date;
+  metadata?: any;
+}>>();
 
 export async function GET(
   req: NextRequest,
@@ -11,9 +16,8 @@ export async function GET(
   try {
     const { sessionId } = params;
     const authHeader = req.headers.get("Authorization");
-    
-    console.log(`Getting chat history for session ${sessionId}`);
-    console.log("Token present:", !!authHeader);
+
+    console.log(`[History] Fetching history for session: ${sessionId}`);
 
     if (!authHeader) {
       return NextResponse.json(
@@ -22,52 +26,22 @@ export async function GET(
       );
     }
 
-    // FIXED: Added /api prefix and Authorization header
-    const response = await fetch(
-      `${BACKEND_API_URL}/api/chat/sessions/${sessionId}/history`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: authHeader,
-        },
-      }
-    );
+    const history = chatSessions.get(sessionId) || [];
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error("Failed to get chat history:", errorText);
-      
-      try {
-        const error = JSON.parse(errorText);
-        return NextResponse.json(
-          { error: error.error || error.message || "Failed to get chat history" },
-          { status: response.status }
-        );
-      } catch {
-        return NextResponse.json(
-          { error: `Backend error: ${response.status} - ${errorText}` },
-          { status: response.status }
-        );
-      }
-    }
+    console.log(`[History] Found ${history.length} messages`);
 
-    const data = await response.json();
-    console.log("Chat history retrieved successfully:", data);
-
-    // Format the response to match the frontend's expected format
-    const formattedMessages = data.map((msg: any) => ({
+    const formattedHistory = history.map(msg => ({
       role: msg.role,
       content: msg.content,
       timestamp: msg.timestamp,
       metadata: msg.metadata,
     }));
 
-    return NextResponse.json(formattedMessages);
+    return NextResponse.json(formattedHistory);
   } catch (error) {
-    console.error("Error getting chat history:", error);
+    console.error("[History] Error fetching chat history:", error);
     return NextResponse.json(
-      { error: "Failed to get chat history" },
+      { error: "Failed to fetch chat history" },
       { status: 500 }
     );
   }

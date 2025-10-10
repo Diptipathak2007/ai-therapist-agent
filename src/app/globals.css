@@ -51,6 +51,7 @@
     }
   }
 }
+
 :root {
   /* LIGHT MODE */
   --background: #fdfaf6;
@@ -58,15 +59,11 @@
   --card: #ffffff;
   --card-foreground: #1c1c1e;
 
-  --primary: #ec4899; /* hot pink logo/button */
+  --primary: #ec4899;
   --primary-foreground: #ffffff;
 
-  --secondary: linear-gradient(
-    90deg,
-    #ec4899,
-    #0ea5e9
-  ); /* pink → sky blue ombre */
-  --secondary-foreground: #a78bfa; /* purple shade for secondary text/icons */
+  --secondary: linear-gradient(90deg, #ec4899, #0ea5e9);
+  --secondary-foreground: #a78bfa;
 
   --accent: #f472b6;
   --accent-foreground: #ffffff;
@@ -80,6 +77,16 @@
   --radius: 0.75rem;
 
   --icon-color: #ec4899;
+
+  /* SIDEBAR LIGHT MODE */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1c1c1e;
+  --sidebar-primary: #ec4899;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f8fafc;
+  --sidebar-accent-foreground: #1c1c1e;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #ec4899;
 }
 
 .dark {
@@ -92,12 +99,8 @@
   --primary: #ec4899;
   --primary-foreground: #ffffff;
 
-  --secondary: linear-gradient(
-    90deg,
-    #ec4899,
-    #0ea5e9
-  ); /* pink → sky blue ombre */
-  --secondary-foreground: #a78bfa; /* purple shade for secondary text/icons */
+  --secondary: linear-gradient(90deg, #ec4899, #0ea5e9);
+  --secondary-foreground: #a78bfa;
 
   --accent: #f472b6;
   --accent-foreground: #fdfaf6;
@@ -110,6 +113,16 @@
   --ring: #ec4899;
 
   --icon-color: #ec4899;
+
+  /* SIDEBAR DARK MODE */
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #fdfaf6;
+  --sidebar-primary: #ec4899;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #2a2a2a;
+  --sidebar-accent-foreground: #fdfaf6;
+  --sidebar-border: #333333;
+  --sidebar-ring: #ec4899;
 }
 
 /* Global application */
@@ -142,16 +155,37 @@ body {
 
 /* ICONS: Make all Lucide icons pink by default */
 .lucide {
-  stroke: var(--icon-color); /* for stroke-based icons */
-  fill: transparent; /* Force transparent fill for outline icons */
+  stroke: var(--icon-color);
+  fill: transparent;
   transition: stroke 0.3s;
 }
 
-/* For filled icons, add a specific class */
 .lucide-filled {
   fill: var(--icon-color);
 }
 
+/* Sidebar specific styles */
+.sidebar {
+  background-color: var(--sidebar) !important;
+  color: var(--sidebar-foreground) !important;
+  border-color: var(--sidebar-border) !important;
+}
+
+.sidebar-item {
+  @apply transition-colors duration-200;
+  background-color: var(--sidebar) !important;
+  color: var(--sidebar-foreground) !important;
+}
+
+.sidebar-item:hover {
+  background-color: var(--sidebar-accent) !important;
+  color: var(--sidebar-accent-foreground) !important;
+}
+
+.sidebar-item.active {
+  background-color: var(--sidebar-primary) !important;
+  color: var(--sidebar-primary-foreground) !important;
+}
 
 @layer base {
   * {

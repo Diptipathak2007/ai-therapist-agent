@@ -12,11 +12,47 @@ export async function POST(req: NextRequest) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
     });
+
+    // Check if the response is OK (status 200-299)
+    if (!res.ok) {
+      // Try to get error message from response
+      let errorMessage = "Login failed";
+      try {
+        const errorData = await res.json();
+        errorMessage = errorData.message || errorData.error || errorMessage;
+      } catch {
+        // If response is not JSON, use status text
+        errorMessage = res.statusText || errorMessage;
+      }
+
+      // Return proper error response
+      return NextResponse.json(
+        { 
+          message: errorMessage,
+          success: false 
+        },
+        { status: res.status }
+      );
+    }
+
+    // Success case - parse and return the data
     const data = await res.json();
-    return NextResponse.json(data, { status: res.status });
-  } catch (error) {
+    
     return NextResponse.json(
-      { message: "Server error", error },
+      { 
+        ...data,
+        success: true 
+      },
+      { status: 200 }
+    );
+
+  } catch (error) {
+    console.error("Login API error:", error);
+    return NextResponse.json(
+      { 
+        message: "Internal server error",
+        success: false 
+      },
       { status: 500 }
     );
   }

@@ -1,30 +1,32 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import {
-  Heart,
-  Menu,
-  X,
-  MessageCircle,
-  AudioWaveform,
-  LogOut,
-  LogIn,
-} from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { Menu, X, MessageCircle, AudioWaveform, LogOut } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { SignInButton } from "@/components/auth/sign-in-button";
 import { useSession } from "@/lib/contexts/session-context";
 
 export function Header() {
-  const { isAuthenticated, logout, user } = useSession();
+  const { isAuthenticated, logout } = useSession();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  console.log("Header: Auth state:", { isAuthenticated, user });
   const navItems = [
-    { href: "/features", label: "Features" },
-    { href: "/about", label: "About KORA" },
+    { id: "features", label: "Features" },
+    { id: "about", label: "About KORA" },
   ];
+
+  const handleScroll = (id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    const yOffset = -80; // Adjust for fixed navbar height
+    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
+    setIsMenuOpen(false); // Close mobile menu
+  };
 
   return (
     <div className="w-full fixed top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -41,7 +43,7 @@ export function Header() {
                 KORA
               </span>
               <span className="text-xs dark:text-muted-foreground">
-                Your mental health Companion{" "}
+                Your mental health Companion
               </span>
             </div>
           </Link>
@@ -49,14 +51,14 @@ export function Header() {
           <div className="flex items-center gap-4">
             <nav className="hidden md:flex items-center space-x-1">
               {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
+                <button
+                  key={item.id}
+                  onClick={() => handleScroll(item.id)}
                   className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
                 >
                   {item.label}
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
-                </Link>
+                </button>
               ))}
             </nav>
 
@@ -93,11 +95,7 @@ export function Header() {
                 className="md:hidden"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
-                {isMenuOpen ? (
-                  <X className="h-5 w-5" />
-                ) : (
-                  <Menu className="h-5 w-5" />
-                )}
+                {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </Button>
             </div>
           </div>
@@ -108,14 +106,13 @@ export function Header() {
           <div className="md:hidden border-t border-primary/10">
             <nav className="flex flex-col space-y-1 py-4">
               {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
+                <button
+                  key={item.id}
+                  onClick={() => handleScroll(item.id)}
                   className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-primary/5 rounded-md transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
-                </Link>
+                </button>
               ))}
               {isAuthenticated && (
                 <Button
@@ -132,8 +129,6 @@ export function Header() {
           </div>
         )}
       </header>
-
-      {/* <LoginModal /> */}
     </div>
   );
 }

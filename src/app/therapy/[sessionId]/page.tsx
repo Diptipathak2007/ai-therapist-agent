@@ -392,10 +392,12 @@ export default function TherapyPage() {
     <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
       <div className="flex flex-col md:flex-row h-[calc(100vh-4rem)] mt-16 sm:mt-20 gap-0 md:gap-6">
         {/* Mobile Sidebar Toggle Button */}
-        <div className={cn(
-          "md:hidden fixed top-4 left-4 z-50 transition-opacity duration-300",
-          isSidebarOpen && "opacity-0 pointer-events-none"
-        )}>
+        <div
+          className={cn(
+            "md:hidden fixed top-4 left-4 z-50 transition-opacity duration-300",
+            isSidebarOpen && "opacity-0 pointer-events-none"
+          )}
+        >
           <Button
             variant="ghost"
             size="icon"
@@ -409,11 +411,13 @@ export default function TherapyPage() {
         {/* Sidebar with chat history */}
         <div
           className={cn(
-            "fixed inset-y-0 left-0 w-72 sm:w-80 bg-black text-white z-40 md:static md:flex md:flex-col border-r border-gray-800 transition-transform duration-300",
-            isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+            "fixed inset-y-0 left-0 w-72 sm:w-80 sidebar z-40 md:static md:flex md:flex-col border-r transition-transform duration-300",
+            isSidebarOpen
+              ? "translate-x-0"
+              : "-translate-x-full md:translate-x-0"
           )}
         >
-          <div className="p-4 pt-16 md:pt-4 border-b border-gray-800">
+          <div className="p-4 pt-16 md:pt-4 border-b sidebar-item">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-lg font-semibold">Chat Sessions</h2>
               <div className="flex items-center gap-2">
@@ -421,7 +425,7 @@ export default function TherapyPage() {
                   variant="ghost"
                   size="icon"
                   onClick={handleNewSession}
-                  className="hover:bg-gray-800 text-white"
+                  className="hover:bg-sidebar-accent"
                   disabled={isLoading}
                 >
                   {isLoading ? (
@@ -434,7 +438,7 @@ export default function TherapyPage() {
                   variant="ghost"
                   size="icon"
                   onClick={() => setIsSidebarOpen(false)}
-                  className="md:hidden hover:bg-gray-800 text-white"
+                  className="md:hidden hover:bg-sidebar-accent"
                 >
                   <X className="w-5 h-5" />
                 </Button>
@@ -442,7 +446,7 @@ export default function TherapyPage() {
             </div>
             <Button
               variant="outline"
-              className="w-full justify-start gap-2 text-sm border-gray-700 text-white hover:bg-gray-800 hover:border-gray-600"
+              className="w-full justify-start gap-2 text-sm border-sidebar-border hover:bg-sidebar-accent hover:border-sidebar-ring"
               onClick={handleNewSession}
               disabled={isLoading}
             >
@@ -461,10 +465,8 @@ export default function TherapyPage() {
                 <div
                   key={session.sessionId}
                   className={cn(
-                    "p-3 rounded-lg text-sm cursor-pointer hover:bg-gray-800 transition-colors",
-                    session.sessionId === sessionId
-                      ? "bg-gray-900 text-primary"
-                      : "bg-gray-950"
+                    "p-3 rounded-lg text-sm cursor-pointer sidebar-item transition-colors",
+                    session.sessionId === sessionId && "sidebar-item active"
                   )}
                   onClick={() => handleSessionSelect(session.sessionId)}
                 >
@@ -474,15 +476,15 @@ export default function TherapyPage() {
                       {session.messages[0]?.content.slice(0, 30) || "New Chat"}
                     </span>
                   </div>
-                  <p className="line-clamp-2 text-gray-400">
+                  <p className="line-clamp-2 text-muted-foreground">
                     {session.messages[session.messages.length - 1]?.content ||
                       "No messages yet"}
                   </p>
                   <div className="flex items-center justify-between mt-2">
-                    <span className="text-xs text-gray-400">
+                    <span className="text-xs text-muted-foreground">
                       {session.messages.length} messages
                     </span>
-                    <span className="text-xs text-gray-400">
+                    <span className="text-xs text-muted-foreground">
                       {(() => {
                         try {
                           const date = new Date(session.updatedAt);
@@ -505,7 +507,7 @@ export default function TherapyPage() {
         </div>
 
         {/* Main chat area */}
-        <div className="flex-1 flex flex-col overflow-hidden bg-white dark:bg-background rounded-lg border md:mt-0 mt-12">
+        <div className="flex-1 flex flex-col overflow-hidden bg-background rounded-lg border md:mt-0 mt-12">
           {/* Chat header */}
           <div className="p-4 border-b flex items-center justify-between">
             <div className="flex items-center gap-2">
@@ -513,7 +515,9 @@ export default function TherapyPage() {
                 <Bot className="w-5 h-5" />
               </div>
               <div>
-                <h2 className="font-semibold text-base sm:text-lg">AI Therapist</h2>
+                <h2 className="font-semibold text-base sm:text-lg">
+                  AI Therapist
+                </h2>
                 <p className="text-xs sm:text-sm text-muted-foreground">
                   {messages.length} messages
                 </p>
@@ -536,7 +540,11 @@ export default function TherapyPage() {
                         animate: {
                           opacity: [0, 1, 0],
                           scale: [1, 1.1, 1],
-                          transition: { duration: 1, repeat: Infinity, ease: [0.4, 0, 0.2, 1] },
+                          transition: {
+                            duration: 1,
+                            repeat: Infinity,
+                            ease: [0.4, 0, 0.2, 1],
+                          },
                         },
                       }}
                     />
@@ -552,7 +560,11 @@ export default function TherapyPage() {
                             animate: {
                               opacity: [0, 1, 0],
                               scale: [1, 1.1, 1],
-                              transition: { duration: 1, repeat: Infinity, ease: [0.4, 0, 0.2, 1] },
+                              transition: {
+                                duration: 1,
+                                repeat: Infinity,
+                                ease: [0.4, 0, 0.2, 1],
+                              },
                             },
                           }}
                         >
@@ -600,9 +612,9 @@ export default function TherapyPage() {
             <div className="flex-1 overflow-y-auto scroll-smooth">
               <div className="max-w-3xl mx-auto">
                 <AnimatePresence initial={false}>
-                  {messages.map((msg) => (
+                  {messages.map((msg, index) => (
                     <motion.div
-                      key={msg.timestamp.toISOString()}
+                      key={`${msg.timestamp.toISOString()}-${index}-${msg.role}`}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3 }}
@@ -664,7 +676,9 @@ export default function TherapyPage() {
                       </div>
                     </div>
                     <div className="flex-1 space-y-2">
-                      <p className="font-medium text-sm sm:text-base">AI Therapist</p>
+                      <p className="font-medium text-sm sm:text-base">
+                        AI Therapist
+                      </p>
                       <p className="text-sm text-muted-foreground">Typing...</p>
                     </div>
                   </motion.div>
@@ -730,7 +744,10 @@ export default function TherapyPage() {
               </div>
             </form>
             <div className="mt-2 text-xs text-center text-muted-foreground">
-              Press <kbd className="px-1.5 sm:px-2 py-0.5 rounded bg-muted">Enter ↵</kbd>{" "}
+              Press{" "}
+              <kbd className="px-1.5 sm:px-2 py-0.5 rounded bg-muted">
+                Enter ↵
+              </kbd>{" "}
               to send,
               <kbd className="px-1.5 sm:px-2 py-0.5 rounded bg-muted ml-1">
                 Shift + Enter

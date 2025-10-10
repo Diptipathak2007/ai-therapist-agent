@@ -1,8 +1,19 @@
-import { NextRequest, NextResponse } from "next/server";
+// FILE LOCATION: app/api/chat/sessions/[sessionId]/messages/route.ts
+// This is the MAIN AI AGENT that processes all messages
 
-const BACKEND_API_URL =
-  process.env.BACKEND_API_URL ||
-  "http://localhost:3001";
+import { NextRequest, NextResponse } from "next/server";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
+// Initialize Gemini AI
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
+
+// In-memory chat storage (for development)
+const chatSessions = new Map<string, Array<{
+  role: "user" | "assistant";
+  content: string;
+  timestamp: Date;
+  metadata?: any;
+}>>();
 
 export async function POST(
   req: NextRequest,
@@ -13,8 +24,8 @@ export async function POST(
     const { message } = await req.json();
     const authHeader = req.headers.get("Authorization");
 
-    console.log(`Sending message to session ${sessionId}:`, message);
-    console.log("Token present:", !!authHeader);
+    console.log(`[AI Agent] Processing message for session: ${sessionId}`);
+    console.log(`[AI Agent] User message:`, message);
 
     if (!authHeader) {
       return NextResponse.json(
@@ -23,53 +34,133 @@ export async function POST(
       );
     }
 
-    if (!message) {
+    if (!message || message.trim() === "") {
       return NextResponse.json(
-        { error: "Message is required" },
+        { error: "Message cannot be empty" },
         { status: 400 }
       );
     }
 
-    // FIXED: Added /api prefix and Authorization header
-    const response = await fetch(
-      `${BACKEND_API_URL}/api/chat/sessions/${sessionId}/messages`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: authHeader,
-        },
-        body: JSON.stringify({ message }),
-      }
-    );
-
-    console.log("Backend response status:", response.status);
-
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error("Backend error response:", errorText);
-      
-      try {
-        const error = JSON.parse(errorText);
-        return NextResponse.json(
-          { error: error.error || error.message || "Failed to process chat message" },
-          { status: response.status }
-        );
-      } catch {
-        return NextResponse.json(
-          { error: `Backend error: ${response.status} - ${errorText}` },
-          { status: response.status }
-        );
-      }
+    if (!process.env.GEMINI_API_KEY) {
+      console.error("[AI Agent] ERROR: GEMINI_API_KEY not found");
+      return NextResponse.json(
+        { error: "AI service is not configured. Please add GEMINI_API_KEY to .env.local" },
+        { status: 500 }
+      );
     }
 
-    const data = await response.json();
-    console.log("Message sent successfully:", data);
-    return NextResponse.json(data);
-  } catch (error) {
-    console.error("Error in chat API:", error);
+    // Get or create chat history
+    if (!chatSessions.has(sessionId)) {
+      chatSessions.set(sessionId, []);
+    }
+    const history = chatSessions.get(sessionId)!;
+
+    // Add user message
+    history.push({
+      role: "user",
+      content: message,
+      timestamp: new Date(),
+    });
+
+    // Configure Gemini model
+    const model = genAI.getGenerativeModel({
+      model: "gemini-1.5-flash",
+      systemInstruction: `You are an intelligent, empathetic, and helpful AI assistant.
+
+Core Responsibilities:
+1. Answer EVERY question comprehensively and accurately
+2. Maintain conversation context across multiple messages
+3. Be conversational, warm, and supportive
+4. Provide detailed explanations when needed
+5. Ask clarifying questions if something is unclear
+6. Admit when you don't know something
+7. Be respectful, professional, and inclusive
+
+Conversation Style:
+- Use a friendly, natural tone
+- Break down complex topics into digestible parts
+- Provide examples to illustrate points
+- Show empathy and understanding
+- Remember previous messages in this conversation
+- Be patient with all types of questions`,
+    });
+
+    // Convert history to Gemini format
+    const geminiHistory = history.slice(0, -1).map(msg => ({
+      role: msg.role === "assistant" ? "model" : "user",
+      parts: [{ text: msg.content }],
+    }));
+
+    // Start chat with history
+    const chat = model.startChat({
+      history: geminiHistory,
+      generationConfig: {
+        maxOutputTokens: 2048,
+        temperature: 0.7,
+        topP: 0.8,
+        topK: 40,
+      },
+    });
+
+    console.log(`[AI Agent] Sending message to Gemini...`);
+
+    // Get AI response
+    const result = await chat.sendMessage(message);
+    const aiResponse = result.response.text();
+
+    console.log(`[AI Agent] Received response`);
+
+    // Add AI response to history
+    history.push({
+      role: "assistant",
+      content: aiResponse,
+      timestamp: new Date(),
+      metadata: {
+        technique: "conversational-ai",
+        goal: "helpful-assistance",
+        progress: [],
+      },
+    });
+
+    chatSessions.set(sessionId, history);
+
+    // Return response
+    return NextResponse.json({
+      message: "Message sent successfully",
+      response: aiResponse,
+      analysis: {
+        emotionalState: "engaged",
+        themes: ["conversation"],
+        riskLevel: 0,
+        recommendedApproach: "continue-dialogue",
+        progressIndicators: ["active-engagement"],
+      },
+      metadata: {
+        technique: "conversational-ai",
+        goal: "helpful-assistance",
+        progress: [],
+      },
+    });
+
+  } catch (error: any) {
+    console.error("[AI Agent] ERROR:", error);
+    
+    if (error.message?.includes("API key")) {
+      return NextResponse.json(
+        { error: "AI service authentication failed" },
+        { status: 500 }
+      );
+    }
+
+    if (error.message?.includes("quota") || error.message?.includes("rate limit")) {
+      return NextResponse.json(
+        { error: "AI service is temporarily busy" },
+        { status: 429 }
+      );
+    }
+
     return NextResponse.json(
-      { error: "Failed to process chat message" },
+      { error: "Failed to process your message" },
       { status: 500 }
     );
   }
