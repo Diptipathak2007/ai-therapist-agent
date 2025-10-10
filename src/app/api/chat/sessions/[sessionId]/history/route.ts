@@ -1,47 +1,42 @@
-// FILE LOCATION: app/api/chat/sessions/[sessionId]/history/route.ts
-
 import { NextRequest, NextResponse } from "next/server";
 
-const chatSessions = new Map<string, Array<{
-  role: "user" | "assistant";
-  content: string;
-  timestamp: Date;
-  metadata?: any;
-}>>();
+// Next.js 15 App Router type fix
+interface RouteContext {
+  params: Promise<{ sessionId: string }>;
+}
 
 export async function GET(
-  req: NextRequest,
-  { params }: { params: { sessionId: string } }
+  request: NextRequest,
+  context: RouteContext
 ) {
   try {
-    const { sessionId } = params;
-    const authHeader = req.headers.get("Authorization");
+    // Await the params
+    const { sessionId } = await context.params;
+    
+    const API_URL =
+      process.env.BACKEND_API_URL ||
+      "https://ai-therapist-agent-backend.onrender.com";
 
-    console.log(`[History] Fetching history for session: ${sessionId}`);
+    const res = await fetch(`${API_URL}/chat/sessions/${sessionId}/history`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
-    if (!authHeader) {
+    if (!res.ok) {
       return NextResponse.json(
-        { error: "Authorization header is required" },
-        { status: 401 }
+        { message: "Failed to fetch chat history" },
+        { status: res.status }
       );
     }
 
-    const history = chatSessions.get(sessionId) || [];
-
-    console.log(`[History] Found ${history.length} messages`);
-
-    const formattedHistory = history.map(msg => ({
-      role: msg.role,
-      content: msg.content,
-      timestamp: msg.timestamp,
-      metadata: msg.metadata,
-    }));
-
-    return NextResponse.json(formattedHistory);
+    const data = await res.json();
+    return NextResponse.json(data);
   } catch (error) {
-    console.error("[History] Error fetching chat history:", error);
+    console.error("Error fetching chat history:", error);
     return NextResponse.json(
-      { error: "Failed to fetch chat history" },
+      { message: "Internal server error" },
       { status: 500 }
     );
   }

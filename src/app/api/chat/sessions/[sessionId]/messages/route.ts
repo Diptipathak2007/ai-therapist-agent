@@ -15,12 +15,18 @@ const chatSessions = new Map<string, Array<{
   metadata?: any;
 }>>();
 
+// Next.js 15 App Router type fix
+interface RouteContext {
+  params: Promise<{ sessionId: string }>;
+}
+
 export async function POST(
   req: NextRequest,
-  { params }: { params: { sessionId: string } }
+  context: RouteContext
 ) {
   try {
-    const { sessionId } = params;
+    // Await the params
+    const { sessionId } = await context.params;
     const { message } = await req.json();
     const authHeader = req.headers.get("Authorization");
 
