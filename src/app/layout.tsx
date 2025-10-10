@@ -7,10 +7,10 @@ import { Header } from "@/components/header";
 import { Toaster } from "@/components/ui/toaster";
 import { Providers } from "@/components/providers";
 
-// Initialize the fonts
+// Initialize the fonts - use simpler configuration
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter",
+  display: "swap", // Add this for better performance
 });
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={inter.className}> {/* Use className instead of variable */}
         <Providers>
           <Header />
           <main>{children}</main>
