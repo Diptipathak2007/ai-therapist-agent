@@ -582,3 +582,11 @@
 {"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-10-10T14:21:06.725Z"}
 {"level":"info","message":"Server running on port 3001","timestamp":"2025-10-10T14:21:06.735Z"}
 {"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-10-10T14:21:06.736Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-10-11T05:15:33.382Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-10-11T05:15:33.386Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-10-11T05:15:33.387Z"}
+{"level":"info","message":"Processing message: how to be a good engineer","sessionId":"fdd09400-869a-473b-b012-2666b4ee3144","timestamp":"2025-10-11T05:22:23.387Z"}
+{"event":{"data":{"goals":[],"history":[],"memory":{"sessionContext":{"conversationThemes":[],"currentTechnique":null},"userProfile":{"emotionalState":[],"preferences":{},"riskLevel":0}},"message":"how to be a good engineer","systemPrompt":"You are an AI therapist assistant. Your role is to:\n          1. Provide empathetic and supportive responses\n          2. Use evidence-based therapeutic techniques\n          3. Maintain professional boundaries\n          4. Monitor for risk factors\n          5. Guide users toward their therapeutic goals\n          6. Be supportive but not replace professional therapy"},"name":"therapy/session.message"},"level":"info","message":"Sending message to Inngest:","timestamp":"2025-10-11T05:22:23.426Z"}
+{"emotionalState":"neutral","level":"info","message":"Message analysis:","progressIndicators":[],"recommendedApproach":"solution-focused therapy","riskLevel":1,"themes":["career","self-improvement","competence"],"timestamp":"2025-10-11T05:22:26.635Z"}
+{"level":"info","message":"Generated AI response successfully","timestamp":"2025-10-11T05:22:29.741Z"}
+{"level":"info","message":"Session updated successfully:","sessionId":"fdd09400-869a-473b-b012-2666b4ee3144","timestamp":"2025-10-11T05:22:29.784Z"}

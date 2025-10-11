@@ -1,3 +1,5 @@
+// lib/api/chat.ts - FIXED VERSION
+
 export interface ChatMessage {
   role: "user" | "assistant";
   content: string;
@@ -40,37 +42,144 @@ export interface ApiResponse {
   };
 }
 
-// FIXED: Use Next.js API routes instead of direct backend calls
-const API_BASE = "/api";
+// Use the same API_BASE_URL as your auth.ts
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
 
-// Helper function to get auth headers
+// Helper function to get auth headers with better error handling
 const getAuthHeaders = () => {
   const token = localStorage.getItem("token");
+  
+  if (!token) {
+    console.warn("No authentication token found in localStorage");
+    // You might want to redirect to login here
+    throw new Error("Authentication required. Please log in.");
+  }
+
   return {
     "Content-Type": "application/json",
-    Authorization: token ? `Bearer ${token}` : "",
+    "Accept": "application/json",
+    "Authorization": `Bearer ${token}`,
   };
+};
+
+// Enhanced error handler
+const handleApiError = async (response: Response, context: string) => {
+  console.error(`API Error in ${context}:`, {
+    status: response.status,
+    statusText: response.statusText,
+    url: response.url
+  });
+
+  let errorData;
+  try {
+    errorData = await response.json();
+  } catch {
+    errorData = { error: `HTTP ${response.status}: ${response.statusText}` };
+  }
+
+  console.error(`Error details for ${context}:`, errorData);
+
+  // Handle specific HTTP status codes
+  if (response.status === 401) {
+    localStorage.removeItem("token");
+    throw new Error("Session expired. Please log in again.");
+  } else if (response.status === 404) {
+    throw new Error(`API endpoint not found: ${context}`);
+  } else if (response.status >= 500) {
+    throw new Error("Server error. Please try again later.");
+  }
+
+  throw new Error(errorData.error || errorData.message || `Failed to ${context}`);
+};
+
+export const getChatHistory = async (sessionId: string): Promise<ChatMessage[]> => {
+  try {
+    console.log(`🔍 Fetching chat history for session: ${sessionId}`);
+    
+    if (!sessionId) {
+      throw new Error("Session ID is required");
+    }
+
+    const headers = getAuthHeaders();
+    console.log("Request headers:", { ...headers, Authorization: "Bearer ***" });
+
+    const response = await fetch(
+      `${API_BASE_URL}/api/chat/sessions/${sessionId}/history`, // ✅ Fixed: Added /api prefix
+      {
+        method: "GET",
+        headers: headers,
+      }
+    );
+
+    console.log(`📡 Response status: ${response.status} ${response.statusText}`);
+
+    if (!response.ok) {
+      await handleApiError(response, "fetch chat history");
+    }
+
+    const data = await response.json();
+    console.log("✅ Received chat history data:", data);
+
+    if (!Array.isArray(data)) {
+      console.error("❌ Invalid chat history format - expected array:", data);
+      throw new Error("Invalid chat history format: expected array of messages");
+    }
+
+    // Transform and validate the response data
+    const messages = data.map((msg: any, index: number) => {
+      if (!msg.role || !msg.content) {
+        console.warn(`Invalid message at index ${index}:`, msg);
+      }
+
+      return {
+        role: msg.role || "assistant",
+        content: msg.content || "",
+        timestamp: new Date(msg.timestamp || Date.now()),
+        metadata: msg.metadata,
+      };
+    });
+
+    console.log(`✅ Successfully processed ${messages.length} messages`);
+    return messages;
+
+  } catch (error) {
+    console.error("❌ Error in getChatHistory:", error);
+    
+    // Re-throw with more context if it's not already an Error object
+    if (error instanceof Error) {
+      throw error;
+    } else {
+      throw new Error(`Unexpected error fetching chat history: ${error}`);
+    }
+  }
 };
 
 export const createChatSession = async (): Promise<string> => {
   try {
-    console.log("Creating new chat session...");
-    const response = await fetch(`${API_BASE}/chat/sessions`, {
+    console.log("🆕 Creating new chat session...");
+    
+    const headers = getAuthHeaders();
+    const response = await fetch(`${API_BASE_URL}/api/chat/sessions`, { // ✅ Fixed: Added /api prefix
       method: "POST",
-      headers: getAuthHeaders(),
+      headers: headers,
     });
 
+    console.log(`📡 Create session response: ${response.status} ${response.statusText}`);
+
     if (!response.ok) {
-      const error = await response.json();
-      console.error("Failed to create chat session:", error);
-      throw new Error(error.error || "Failed to create chat session");
+      await handleApiError(response, "create chat session");
     }
 
     const data = await response.json();
-    console.log("Chat session created:", data);
+    console.log("✅ Chat session created:", data);
+    
+    if (!data.sessionId) {
+      throw new Error("No session ID received from server");
+    }
+
     return data.sessionId;
   } catch (error) {
-    console.error("Error creating chat session:", error);
+    console.error("❌ Error creating chat session:", error);
     throw error;
   }
 };
@@ -80,111 +189,96 @@ export const sendChatMessage = async (
   message: string
 ): Promise<ApiResponse> => {
   try {
-    console.log(`Sending message to session ${sessionId}:`, message);
+    console.log(`📤 Sending message to session ${sessionId}:`, message);
+    
+    if (!sessionId || !message?.trim()) {
+      throw new Error("Session ID and message are required");
+    }
+
+    const headers = getAuthHeaders();
     const response = await fetch(
-      `${API_BASE}/chat/sessions/${sessionId}/messages`,
+      `${API_BASE_URL}/api/chat/sessions/${sessionId}/messages`, // ✅ Fixed: Added /api prefix
       {
         method: "POST",
-        headers: getAuthHeaders(),
-        body: JSON.stringify({ message }),
+        headers: headers,
+        body: JSON.stringify({ message: message.trim() }),
       }
     );
 
+    console.log(`📡 Send message response: ${response.status} ${response.statusText}`);
+
     if (!response.ok) {
-      const error = await response.json();
-      console.error("Failed to send message:", error);
-      throw new Error(error.error || "Failed to send message");
+      await handleApiError(response, "send message");
     }
 
     const data = await response.json();
-    console.log("Message sent successfully:", data);
+    console.log("✅ Message sent successfully:", data);
     return data;
   } catch (error) {
-    console.error("Error sending chat message:", error);
-    throw error;
-  }
-};
-
-export const getChatHistory = async (
-  sessionId: string
-): Promise<ChatMessage[]> => {
-  try {
-    console.log(`Fetching chat history for session ${sessionId}`);
-    const response = await fetch(
-      `${API_BASE}/chat/sessions/${sessionId}/history`,
-      {
-        headers: getAuthHeaders(),
-      }
-    );
-
-    if (!response.ok) {
-      const error = await response.json();
-      console.error("Failed to fetch chat history:", error);
-      throw new Error(error.error || "Failed to fetch chat history");
-    }
-
-    const data = await response.json();
-    console.log("Received chat history:", data);
-
-    if (!Array.isArray(data)) {
-      console.error("Invalid chat history format:", data);
-      throw new Error("Invalid chat history format");
-    }
-
-    // Ensure each message has the correct format
-    return data.map((msg: any) => ({
-      role: msg.role,
-      content: msg.content,
-      timestamp: new Date(msg.timestamp),
-      metadata: msg.metadata,
-    }));
-  } catch (error) {
-    console.error("Error fetching chat history:", error);
+    console.error("❌ Error sending chat message:", error);
     throw error;
   }
 };
 
 export const getAllChatSessions = async (): Promise<ChatSession[]> => {
   try {
-    console.log("Fetching all chat sessions...");
-    const response = await fetch(`${API_BASE}/chat/sessions`, {
-      headers: getAuthHeaders(),
+    console.log("📋 Fetching all chat sessions...");
+    
+    const headers = getAuthHeaders();
+    const response = await fetch(`${API_BASE_URL}/api/chat/sessions`, { // ✅ Fixed: Added /api prefix
+      headers: headers,
     });
 
-    console.log("Get sessions response status:", response.status);
+    console.log(`📡 Get sessions response: ${response.status} ${response.statusText}`);
 
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error("Failed to fetch chat sessions - Raw response:", errorText);
-      
-      try {
-        const error = JSON.parse(errorText);
-        throw new Error(error.error || "Failed to fetch chat sessions");
-      } catch (parseError) {
-        throw new Error(`HTTP ${response.status}: ${errorText}`);
-      }
+      await handleApiError(response, "fetch chat sessions");
     }
 
     const data = await response.json();
-    console.log("Received chat sessions:", data);
+    console.log("✅ Received chat sessions:", data);
+
+    if (!Array.isArray(data)) {
+      console.error("❌ Invalid sessions format - expected array:", data);
+      throw new Error("Invalid sessions format: expected array");
+    }
 
     return data.map((session: any) => {
-      // Ensure dates are valid
       const createdAt = new Date(session.createdAt || Date.now());
       const updatedAt = new Date(session.updatedAt || Date.now());
 
       return {
-        ...session,
+        sessionId: session.sessionId || session._id || `session-${Date.now()}`,
+        messages: (session.messages || []).map((msg: any) => ({
+          role: msg.role || "assistant",
+          content: msg.content || "",
+          timestamp: new Date(msg.timestamp || Date.now()),
+          metadata: msg.metadata,
+        })),
         createdAt: isNaN(createdAt.getTime()) ? new Date() : createdAt,
         updatedAt: isNaN(updatedAt.getTime()) ? new Date() : updatedAt,
-        messages: (session.messages || []).map((msg: any) => ({
-          ...msg,
-          timestamp: new Date(msg.timestamp || Date.now()),
-        })),
       };
     });
   } catch (error) {
-    console.error("Error fetching chat sessions:", error);
+    console.error("❌ Error fetching chat sessions:", error);
     throw error;
+  }
+};
+
+// Utility function to check if user is authenticated
+export const checkAuthStatus = async (): Promise<boolean> => {
+  const token = localStorage.getItem("token");
+  if (!token) return false;
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/auth/me`, {
+      headers: {
+        "Authorization": `Bearer ${token}`,
+        "Accept": "application/json"
+      },
+    });
+    return response.ok;
+  } catch {
+    return false;
   }
 };
