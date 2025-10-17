@@ -9,14 +9,10 @@ const nextConfig = {
   images: {
     domains: [],
   },
-  // Add these to fix the build error
   output: 'standalone',
   trailingSlash: true,
-  experimental: {
-    appDir: true,
-  },
-  // Disable static generation for error pages
-  staticPageGenerationTimeout: 0,
+  // Remove experimental.appDir - it's now stable in Next.js 15
+  staticPageGenerationTimeout: 60, // Increase timeout
 }
 
 module.exports = nextConfig
