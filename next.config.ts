@@ -1,19 +1,12 @@
-import { NextConfig } from 'next'
+import { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  images: {
-    domains: [],
-  },
+  eslint: { ignoreDuringBuilds: true },
+  typescript: { ignoreBuildErrors: true },
+  images: { domains: [] },
+  // output: 'standalone', // optional, can remove if causing issues
   trailingSlash: true,
   staticPageGenerationTimeout: 60,
-  // Remove standalone output to prevent missing module errors
-  output: undefined,
-}
+};
 
-export default nextConfig
+export default nextConfig;
