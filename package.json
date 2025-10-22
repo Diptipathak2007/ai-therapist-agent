@@ -3,12 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint",
-    "render-build": "npm install && next build --no-lint"
-  },
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start -p 3001",
+  "render-build": "npm install && next build"
+},
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "@radix-ui/react-alert-dialog": "^1.1.15",
