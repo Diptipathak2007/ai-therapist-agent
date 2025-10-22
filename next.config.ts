@@ -1,5 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import { NextConfig } from 'next'
+
+const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -9,10 +10,10 @@ const nextConfig = {
   images: {
     domains: [],
   },
-  output: 'standalone',
   trailingSlash: true,
-  // Remove experimental.appDir - it's now stable in Next.js 15
-  staticPageGenerationTimeout: 60, // Increase timeout
+  staticPageGenerationTimeout: 60,
+  // Remove standalone output to prevent missing module errors
+  output: undefined,
 }
 
-module.exports = nextConfig
+export default nextConfig

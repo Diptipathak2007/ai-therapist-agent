@@ -598,3 +598,6 @@
 {"emotionalState":"inquisitive","level":"info","message":"Message analysis:","progressIndicators":[],"recommendedApproach":"Psychoeducation, interpersonal therapy, values clarification","riskLevel":1,"themes":["friendship","relationships","social skills"],"timestamp":"2025-10-17T08:10:37.852Z"}
 {"level":"info","message":"Generated AI response successfully","timestamp":"2025-10-17T08:10:41.951Z"}
 {"level":"info","message":"Session updated successfully:","sessionId":"52271b0c-c7fc-4469-8950-57149d38a961","timestamp":"2025-10-17T08:10:42.011Z"}
+{"level":"info","message":"✅ Connected to MongoDB","timestamp":"2025-10-22T09:37:28.215Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2025-10-22T09:37:28.222Z"}
+{"level":"info","message":"Health check: http://localhost:3001/api/health","timestamp":"2025-10-22T09:37:28.223Z"}
