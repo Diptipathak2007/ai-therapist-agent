@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
   images: { 
     unoptimized: true,
   },
+  // experimental options can go here if needed, but appDir is auto-enabled
 }
 
 export default nextConfig
