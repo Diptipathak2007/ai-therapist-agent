@@ -199,7 +199,7 @@ export const sendMessage = async (req: Request, res: Response) => {
     }
 
     // Process the message directly using Gemini
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
     // Analyze the message
     const analysisPrompt = `Analyze this therapy message and provide insights. Return ONLY a valid JSON object with no markdown formatting or additional text.
