@@ -10,7 +10,7 @@ import { InngestEvent } from "../types/inngest";
 
 // Initialize Gemini API
 const genAI = new GoogleGenerativeAI(
-  process.env.GEMINI_API_KEY || "AIzaSyBCBz3wQu9Jjd_icCDZf-17CUO_O8IynwI"
+  process.env.GEMINI_API_KEY || ""
 );
 
 // Create a new chat session
@@ -199,7 +199,7 @@ export const sendMessage = async (req: Request, res: Response) => {
     }
 
     // Process the message directly using Gemini
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
 
     // Analyze the message
     const analysisPrompt = `Analyze this therapy message and provide insights. Return ONLY a valid JSON object with no markdown formatting or additional text.

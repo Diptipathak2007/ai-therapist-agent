@@ -14,6 +14,7 @@ dotenv.config({ path: envPath });
 console.log("Environment variables check:");
 console.log("JWT_SECRET:", process.env.JWT_SECRET ? `Loaded (length: ${process.env.JWT_SECRET.length})` : "MISSING");
 console.log("MONGODB_URI:", process.env.MONGODB_URI ? "Loaded" : "MISSING");
+console.log("GEMINI_API_KEY:", process.env.GEMINI_API_KEY ? `Loaded (length: ${process.env.GEMINI_API_KEY.length})` : "MISSING");
 console.log("NODE_ENV:", process.env.NODE_ENV || "development");
 
 // Then import other modules

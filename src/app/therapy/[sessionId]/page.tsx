@@ -221,12 +221,15 @@ export default function TherapyPage() {
       };
       setMessages((prev) => [...prev, userMessage]);
 
+      // Stress detection removed to allow AI to respond
+      /*
       const stressCheck = detectStressSignals(currentMessage);
       if (stressCheck) {
         setStressPrompt(stressCheck);
         setIsTyping(false);
         return;
       }
+      */
 
       const response = await sendChatMessage(sessionId, currentMessage);
       const aiResponse =
