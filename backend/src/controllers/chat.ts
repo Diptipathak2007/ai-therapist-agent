@@ -199,7 +199,7 @@ export const sendMessage = async (req: Request, res: Response) => {
     }
 
     // Process the message directly using Gemini
-    const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
     // Analyze the message
     const analysisPrompt = `Analyze this therapy message and provide insights. Return ONLY a valid JSON object with no markdown formatting or additional text.
@@ -252,12 +252,14 @@ export const sendMessage = async (req: Request, res: Response) => {
     Provide a thoughtful, professional therapeutic response that helps the user process their thoughts and feelings while maintaining appropriate boundaries.`;
 
     let response;
+    let debugError;
     try {
       const responseResult = await model.generateContent(responsePrompt);
       response = responseResult.response.text().trim();
       logger.info("Generated AI response successfully");
     } catch (aiError) {
       logger.error("AI response generation failed:", aiError);
+      debugError = aiError instanceof Error ? aiError.message : String(aiError);
       response = "I understand you're sharing something important with me. While I'm experiencing a technical issue right now, I want you to know that your feelings and experiences matter. If you're in crisis or need immediate support, please consider reaching out to a mental health professional or crisis hotline.";
     }
 
@@ -296,6 +298,7 @@ export const sendMessage = async (req: Request, res: Response) => {
           emotionalState: analysis.emotionalState,
           riskLevel: analysis.riskLevel,
         },
+        debugError, // Include error details for frontend debugging
       },
     });
   } catch (error) {
