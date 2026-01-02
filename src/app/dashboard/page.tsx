@@ -265,7 +265,9 @@ const generateInsights = (activities: Activity[]) => {
     .slice(0, 3);
 };
 
-export default function Dashboard() {
+import { Suspense } from "react";
+
+function DashboardContent() {
   const [mounted, setMounted] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
   const router = useRouter();
@@ -778,5 +780,17 @@ export default function Dashboard() {
         onActivityLogged={loadActivities}
       />
     </div>
+  );
+}
+
+export default function Dashboard() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
+      </div>
+    }>
+      <DashboardContent />
+    </Suspense>
   );
 }
