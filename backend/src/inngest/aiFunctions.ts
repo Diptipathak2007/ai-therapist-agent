@@ -41,7 +41,7 @@ export const processChatMessage = inngest.createFunction(
       // Analyze the message using Gemini
       const analysis = await step.run("analyze-message", async () => {
         try {
-          const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
+          const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
           const prompt = `Analyze this therapy message and provide insights. Return ONLY a valid JSON object with no markdown formatting or additional text.
           Message: ${message}
@@ -108,7 +108,7 @@ export const processChatMessage = inngest.createFunction(
       // Generate therapeutic response
       const response = await step.run("generate-response", async () => {
         try {
-          const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
+          const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
           const prompt = `${systemPrompt}
           
