@@ -42,14 +42,21 @@ app.use(cors({
     const allowedOrigins = [
       'http://localhost:3000',
       'http://localhost:3001',
-      process.env.NEXT_PUBLIC_APP_URL
+      process.env.NEXT_PUBLIC_APP_URL,
+      'https://ai-therapist-agent-1pm3-38ylu897j.vercel.app'
     ].filter(Boolean);
 
-    // Check if origin is allowed or is a Vercel preview deployment
-    if (allowedOrigins.includes(origin) || origin.endsWith('.vercel.app')) {
+    // Debug logging
+    const isAllowed = allowedOrigins.includes(origin);
+    const isVercel = origin.endsWith('.vercel.app');
+    
+    if (isAllowed || isVercel) {
       return callback(null, true);
     } else {
       console.log('CORS blocked for origin:', origin);
+      console.log('Origin type:', typeof origin);
+      console.log('Origin length:', origin.length);
+      console.log('Is Vercel (.vercel.app):', isVercel);
       return callback(new Error('Not allowed by CORS'));
     }
   },
